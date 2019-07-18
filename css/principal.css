@@ -1,0 +1,84 @@
+:root {
+    --color-fondo : rgba(0, 0, 0, 0.8);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-fondo);
+    /* background-image: url(../img/Arte\ 1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
+
+main {
+    background-image: url(../img/Arte\ 1.jpg);
+    background-size: contain;
+}
+
+
+.video {
+    height: 30vh;
+}
+
+.car-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.car-flex-rigth{
+    display: flex;
+    justify-content: center;
+}
+
+.card-button {
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px -5px  rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+}
+
+.card-button:active {
+    box-shadow: none;
+    text-shadow: 1px 1px 6px #fff;
+    top: 2px;
+    left: 2px;
+}
+
+.card-body {
+    margin: -5px;
+}
+
+.separacion {
+    padding: 0.3rem .8rem;
+}
+
+/* [class^="flex-"] {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+} */
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn-2 {
+    width: 50%;
+}
+
+.icon {
+    /* height: 32px;
+    width: 32px; */
+    margin-bottom: .3rem;
+}
+
+label {
+    color: hsla(110, 100%, 100%, .8);
+    
+}
