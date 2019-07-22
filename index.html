@@ -91,14 +91,14 @@
     <div class="container">
       <div class="row">
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#registro">
+          <div class="card text-white bg-secondary card-button reg" data-toggle="modal" data-target="#registro">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/1.png" alt="" srcset="">
               </div>
               <p class="card-text car-flex">REGISTRO</p>
             </div>
-            <span id="totalreg" class="badge badge-primary badge-down">0</span>
+            <span id="totalreg" class="badge badge-danger badge-down">0</span>
           </div>
         </div>
         <div class="col-4 separacion">
@@ -109,7 +109,7 @@
               </div>
               <p class="card-text car-flex">CREAR</p>
             </div>
-            <span class="badge badge-primary badge-down">10</span>
+            <span class="badge badge-danger badge-down">10</span>
           </div>
         </div>
         <div class="col-4 separacion">
@@ -120,7 +120,7 @@
               </div>
               <p class="card-text car-flex">Registro</p>
             </div>
-            <span class="badge badge-primary badge-down">0</span>
+            <span class="badge badge-danger badge-down">0</span>
           </div>
         </div>
       </div>
@@ -193,8 +193,12 @@
                 <div class="col-12 separacion">
                   <button type="button" id="verificar" class="btn btn-primary form-control">Verificar</button>
                 </div>
-                <div class="col-12 ">
-                  <h4>Registrado: No</h4>
+              </div>
+              <span aria-hidden="true">&times;</span>
+
+              <div class="form-row" >
+                <div class="col-12">
+                  <h4 class="car-flex">Registrado: No</h4>
                 </div>
               </div>
               <span aria-hidden="true">&times;</span>
@@ -255,28 +259,43 @@
 
             <form>
               <div class="form-row">
-                <div class="form-group col-3">
-                  <label for="name" class="col-form-label">Nombre</label>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">Nombre:</label>
                 </div>
-                <div class="form-group col-9">
+                <div class="col-9 separacion">
+                  <input type="text" class="form-control" id="name" placeholder="Nombre">
+                </div>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">Paterno:</label>
+                </div>
+                <div class="col-9 separacion">
+                  <input type="etextmail" class="form-control" id="name" placeholder="Apellido Paterno">
+                </div>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">Materno:</label>
+                </div>
+                <div class="col-9 separacion">
+                  <input type="text" class="form-control" id="name" placeholder="Apellido Materno">
+                </div>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">CI:</label>
+                </div>
+                <div class="col-9 separacion">
+                  <input type="number" class="form-control" id="name" placeholder="CI">
+                </div>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">Telefono:</label>
+                </div>
+                <div class="col-9 separacion">
+                  <input type="number" class="form-control" id="name" placeholder="Telefono">
+                </div>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">Email</label>
+                </div>
+                <div class="col-9 separacion">
                   <input type="email" class="form-control" id="name" placeholder="Email">
                 </div>
-                <!-- <div class="form-group col-md-6">
-                      <label for="lastname">Apellidos</label>
-                      <input type="password" class="form-control" id="lastname" placeholder="Password">
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="inputEmail4">Email</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="inputEmail4">Email</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                    </div> -->
-                <!-- <div class="form-group col-md-12">
-                      <label for="inputEmail4">Email</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                    </div> -->
+
               </div>
             </form>
           </div>
