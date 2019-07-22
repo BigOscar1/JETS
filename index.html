@@ -129,15 +129,16 @@
     <div class="container">
       <div class="row">
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#registro">
+          <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#material">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/register.png" alt="" srcset="">
               </div>
-              <p class="card-text car-flex">REGISTRO</p>
+              <p class="card-text car-flex">MATERIAL</p>
+              </div>
+              <span id="totalreg" class="badge badge-primary badge-down">0</span>
             </div>
           </div>
-        </div>
         <div class="col-4 separacion">
           <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#crearCuenta">
             <div class="card-body">
@@ -146,6 +147,7 @@
               </div>
               <p class="card-text car-flex">CREAR</p>
             </div>
+            <span id="totalreg" class="badge badge-primary badge-down">0</span>
           </div>
         </div>
         <div class="col-4 separacion">
@@ -156,6 +158,7 @@
               </div>
               <p class="card-text car-flex">Registro</p>
             </div>
+            <span id="totalreg" class="badge badge-primary badge-down">0</span>
           </div>
         </div>
       </div>
@@ -286,6 +289,76 @@
       </div>
     </div>
 
+
+    <div class="modal fade" id="material" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">MATERIAL</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- <div class="flex-2">
+                    <button type="button" class="btn btn-warning btn-2">Escanear</button>
+                    
+                </div> -->
+
+          <form>
+            <div class="form-row ">
+              <div class="col-6 separacion">
+                <button type="button" id="scan" class="btn btn-warning btn-full-width">Escanear</button>
+              </div>
+              <div class="col-6 separacion">
+                <input type="text" class="form-control" id="digitos" placeholder="Registro o CI">
+              </div>
+              <div class="col-12 separacion">
+                <button type="button" id="verificar" class="btn btn-primary form-control">Verificar</button>
+              </div>
+              <div class="col-12 ">
+                <h4>Entregado: No</h4>
+              </div>
+            </div>
+            <span aria-hidden="true">&times;</span>
+
+            <div class="form-row " id="datos">
+              <div class="col-3 separacion">
+                <label for="name" class="col-form-label">Nombre: </label>
+              </div>
+              <div class="col-9 separacion">
+                <input type="text" class="form-control" placeholder="Nombre" disabled="">
+              </div>
+              <div class="col-3 separacion">
+                <label for="name" class="col-form-label">Paterno: </label>
+              </div>
+              <div class="col-9 separacion">
+                <input type="text" class="form-control" placeholder="Apellido Paterno" disabled="">
+              </div>
+              <div class="col-3 separacion">
+                <label for="name" class="col-form-label">Materno: </label>
+              </div>
+              <div class="col-9 separacion">
+                <input type="text" class="form-control" placeholder="Apellido Materno" disabled="">
+              </div>
+              <div class="col-3 separacion">
+                <label for="name" class="col-form-label">CI: </label>
+              </div>
+              <div class="col-9 separacion">
+                <input type="text" class="form-control" placeholder="CI" disabled="">
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal">Cancelar</button>
+          <button type="button" id="reg" class="btn btn-primary btn-2">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </main>
   <script src="./external/js/bootstrap.bundle.min.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script>
