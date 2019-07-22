@@ -44,9 +44,20 @@ border-radius: 0 0px 10px 10px;
 }
 
 .card-button {
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 0px 5px 10px -5px  rgba(0, 0, 0, 0.8);
     margin-bottom: 1rem;
+    background-image: url(../img/75.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.reg {
+    background-image: url(../img/75.jpg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .card-button:active {
