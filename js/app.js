@@ -63,7 +63,7 @@ const countDown = (deadline, elem, finalMesaasge) => {
     }, 1000);
 }
 
-countDown('July 23 2019 10:48:00 GMT-0400', 'clock','' )
+countDown('July 23 2019 11:48:00 GMT-0400', 'clock','' )
 
 
 // remainDays = Math.floor((remainTime / (3600 * 24)) / 7);
