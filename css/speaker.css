@@ -53,6 +53,7 @@ header {
 .img-card {
     height: 10rem;
     width: 100%;
+    border-radius: 10px 0 0 10px;
     /* border-radius: 10px 0 0 10px; */
     /* border-radius: var(--border-radius); */
     /* box-shadow: 0px 5px 10px -5px  rgba(0, 0, 0, 0.8); */
