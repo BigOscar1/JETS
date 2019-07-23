@@ -106,6 +106,13 @@ border-radius: 0 0px 5px 5px;
 }
 
 label {
-    color: hsla(110, 100%, 100%, .8);
-    
+    color: hsla(110, 100%, 100%, .8);   
+}
+
+.breadcrumb {
+    background-color: rgba(41, 40, 40, 0.0)
+}
+
+.carousel-item {
+    border-radius: 5px;
 }
