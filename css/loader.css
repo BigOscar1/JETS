@@ -1,6 +1,7 @@
 :root {
   --color-fondo : rgba(0, 0, 0, 0.8);
 }
+
 .loader-page {
   position: fixed;
   z-index: 25000;
@@ -16,6 +17,7 @@
   justify-content: center;
   transition:all .3s ease;
 }
+
 .loader-page::before {
   content: "";
   position: absolute;

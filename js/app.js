@@ -57,13 +57,13 @@ const countDown = (deadline, elem, finalMesaasge) => {
         if (t.remainTime <= 1) {
             clearInterval(timerUpdate);
             el.innerHTML = finalMesaasge;
-            alert('a')
+            
         };
 
     }, 1000);
 }
 
-countDown('July 23 2019 11:48:00 GMT-0400', 'clock','' )
+countDown('July 24 2019 12:48:00 GMT-0400', 'clock','' )
 
 
 // remainDays = Math.floor((remainTime / (3600 * 24)) / 7);

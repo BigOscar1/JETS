@@ -286,7 +286,22 @@
                 <div class="col-9 separacion">
                   <input type="email" class="form-control" id="name" placeholder="Email">
                 </div>
-
+                <div class="col-3 separacion">
+                    <label for="name" class="col-form-label">Tipo</label>
+                  </div>
+                <div class="col-9 separacion">
+                    <select class="custom-select">
+                        <option disabled>Tipo de Usuario</option>
+                        <option  selected="" value="Estudiante">Estudiante</option>
+                        <option value="Invitado">Invitado</option>
+                        <option value="Externo">Externo</option>
+                        <option value="Conferenciasta">Conferenciasta</option>
+                        <option value="Jurado">Jurado</option>
+                        <option value="Vip">Vip</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Administrador">Administrador</option>
+                      </select>
+                </div>  
               </div>
             </form>
           </div>
@@ -373,7 +388,6 @@
   </div>
   </main>
   <script src="./external/js/bootstrap.bundle.min.js"></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script>
 
   <!-- Principal -->
   <script type="text/javascript" src="cordova.js"></script>
@@ -381,8 +395,17 @@
   <script src="./js/conexion/conexion.js"></script>
   <script src="./js/mod1/interface.js"></script>
   <script src="./js/mod1/app.js"></script>
+
+  <script src="./js/reporte/generalQr.js"></script>
+
+
   <script src="./js/app.js"></script>
+<<<<<<< HEAD
   <script src="./js/principal.js"></script>
+=======
+
+  <script src="./js/principal.js"></script> 
+>>>>>>> 7ae3e5c6876dc82cb6cd930360b2cfb1bd5ffe58
 
   <script>
     $("#speaker").click(function () {
