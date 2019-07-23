@@ -6,6 +6,7 @@
   z-index: 25000;
   background-color: var(--color-fondo);
   background-image: url(../img/fondo.jpg);
+  background-size: contain; 
   left: 0px;
   top: 0px;
   height: 100%;
