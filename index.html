@@ -12,12 +12,16 @@
   <link rel="stylesheet" href="./external/css/bootstrap-reboot.min.css">
   <!-- JETS -->
   <link rel="stylesheet" href="./css/principal.css">
-  <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/cuentaRegresiva.css">
+  <link rel="stylesheet" href="./css/loader.css"
+  <!-- <link rel="stylesheet" href="./css/loader.css"> -->
   <!-- Jquery -->
   <script src="./external/js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="loader-page"></div>
   <header>
     <ol class="breadcrumb">
       <div class="bd-example">
@@ -29,19 +33,13 @@
               </ol> -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./img/Arte 2.jpg" class="d-block w-100 video" alt="...">
+              <img src="./img/Arte 3.jpg" class="d-block w-100 video" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="./img/Arte 3.jpg" class="d-block w-100 video" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
+
             <div class="carousel-item">
               <img src="./img/Arte 1.jpg" class="d-block w-100 video" alt="...">
               <div class="carousel-caption d-none d-md-block">
@@ -49,13 +47,7 @@
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="./img/Arte 4.jpg" class="d-block w-100 video" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-            </div>
+
           </div>
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -71,7 +63,7 @@
   </header>
 
   <main>
-
+      <div id="clock"></div>
     <div class="container">
       <div class="row">
         <div class="col-12 separacion">
@@ -102,7 +94,7 @@
           </div>
         </div>
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#crearCuenta">
+          <div class="card text-white bg-secondary card-button reg" data-toggle="modal" data-target="#crearCuenta">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/3.png" alt="" srcset="">
@@ -113,7 +105,7 @@
           </div>
         </div>
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button">
+          <div class="card text-white bg-secondary card-button reg">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/register.png" alt="" srcset="">
@@ -129,36 +121,36 @@
     <div class="container">
       <div class="row">
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#material">
+          <div class="card text-white bg-secondary card-button reg" data-toggle="modal" data-target="#material">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/register.png" alt="" srcset="">
               </div>
               <p class="card-text car-flex">MATERIAL</p>
               </div>
-              <span id="totalreg" class="badge badge-primary badge-down">0</span>
+              <span id="totalreg" class="badge badge-danger badge-down">0</span>
             </div>
           </div>
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button" data-toggle="modal" data-target="#crearCuenta">
+          <div class="card text-white bg-secondary card-button reg" data-toggle="modal" data-target="#crearCuenta">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/register.png" alt="" srcset="">
               </div>
               <p class="card-text car-flex">CREAR</p>
             </div>
-            <span id="totalreg" class="badge badge-primary badge-down">0</span>
+            <span id="totalreg" class="badge badge-danger badge-down">0</span>
           </div>
         </div>
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button">
+          <div class="card text-white bg-secondary card-button reg" id="feria">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/register.png" alt="" srcset="">
               </div>
-              <p class="card-text car-flex">Registro</p>
+              <p class="card-text car-flex">FERIA</p>
             </div>
-            <span id="totalreg" class="badge badge-primary badge-down">0</span>
+            <span id="totalreg" class="badge badge-danger badge-down borrar-bagde">0</span>
           </div>
         </div>
       </div>
@@ -336,8 +328,10 @@
               <div class="col-12 separacion">
                 <button type="button" id="verificar" class="btn btn-primary form-control">Verificar</button>
               </div>
+            <span aria-hidden="true">&times;</span>
+
               <div class="col-12 ">
-                <h4>Entregado: No</h4>
+                <h4 class="car-flex">Entregado: No</h4>
               </div>
             </div>
             <span aria-hidden="true">&times;</span>
@@ -388,12 +382,21 @@
   <script src="./js/conexion/conexion.js"></script>
   <script src="./js/mod1/interface.js"></script>
   <script src="./js/mod1/app.js"></script>
+<<<<<<< HEAD
   <script src="./js/reporte/generalQr.js"></script>
 
+=======
+  <script src="./js/app.js"></script>
+  <script src="../js/principal.js"></script> 
+>>>>>>> cd284d19f16ce6cef051441858333c97d10aafd2
 
   <script>
     $("#speaker").click(function () {
       location.href = "html/speaker.html";
+    });
+
+    $("#feria").click(function () {
+      location.href = "html/feria.html";
     });
   </script>
 </body>

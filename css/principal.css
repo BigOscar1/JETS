@@ -25,7 +25,7 @@ main {
 }
 
 .badge-down {
-border-radius: 0 0px 10px 10px;
+border-radius: 0 0px 5px 5px;
 }
 
 
@@ -55,7 +55,7 @@ border-radius: 0 0px 10px 10px;
 
 .reg {
     background-image: url(../img/75.jpg) ;
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -101,7 +101,18 @@ border-radius: 0 0px 10px 10px;
     margin-bottom: .3rem;
 }
 
+.borrar-bagde{
+    opacity: 0;
+}
+
 label {
-    color: hsla(110, 100%, 100%, .8);
-    
+    color: hsla(110, 100%, 100%, .8);   
+}
+
+.breadcrumb {
+    background-color: rgba(41, 40, 40, 0.0)
+}
+
+.carousel-item {
+    border-radius: 5px;
 }
