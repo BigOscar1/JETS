@@ -1608,7 +1608,7 @@ var qrcode = function() {
 		var img = '';
 		// img += '<img';
 		// img += '\u0020src="';
-		img += 'data:image/JPEG;base64,';
+		img += 'data:image/PNG;base64,';
 		img += base64;
 		// img += '"';
 		// img += '\u0020width="';

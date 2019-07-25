@@ -193,29 +193,27 @@ class Interface {
 
     }
 
-  async  credencialPdf(codigo, nom, tipo) {
+    credencialPdf(codigo, nom, tipo) {
         const qr = codigo.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
         const imgQr = create_qrcode(qr);
-        let doc = new jsPDF()
-        doc.setFontSize(40)
-        // doc.text(55, 55, 'CREDENCIAL')
-        // console.log(doc.internal.pageSize.width);
-        // console.log(doc.internal.pageSize.height);
-        // const x = doc.internal.pageSize.width;
-        // const y = doc.internal.pageSize.height;
-        this.centrar(doc,'CREDENCIAL',50);
-        doc.setFontSize(20)
-        doc.text(72, 70, tipo)
-        doc.addImage(imgQr, 'JPEG', 50, 70, 100, 100)
-        doc.setFontSize(20)
-        doc.text(60, 170, nom)
+        let doc = new jsPDF('')
+        let logo = new Image();
+        let width = doc.internal.pageSize.getWidth();
+        let height = doc.internal.pageSize.getHeight();
+        logo.src = './img/credencial.png';
+        doc.addImage(logo, 'PNG', ((width - 90) / 2), 50, 90, 130);
+        console.log((width / 90) / 2);
+        doc.setFontSize(10)
+        this.centrar(doc, tipo, 100);
+        this.centrar(doc, nom, 145);
+        doc.addImage(imgQr, 'PNG', 87.5, 105, 35, 35)
         window.open(doc.output('bloburl'));
 
     }
 
-    centrar(doc,text,y) {
-        let textWidth = doc.getStringUnitWidth(text) * doc.internal.getFontSize()/doc.internal.scaleFactor;
-        let textOffset = (doc.internal.pageSize.width - textWidth)/2;
+    centrar(doc, text, y) {
+        let textWidth = doc.getStringUnitWidth(text) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        let textOffset = (doc.internal.pageSize.width - textWidth) / 2;
         doc.text(textOffset, y, text);
     }
     quitEspacio(str) {
