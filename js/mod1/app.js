@@ -11,7 +11,7 @@ const verificar = document.querySelector('#verificar');
 const registrar = document.querySelector('#reg');
 const registroTotal = document.querySelector('#totalreg');
 const scan = document.querySelector('#scan');
-
+const credencial = document.querySelector('#credencial');
 
 //funciones
 
@@ -36,6 +36,19 @@ registrar.addEventListener('click', () => {
 scan.addEventListener('click', () => {
     io.scan();
 });
+
+credencial.addEventListener('click',()=>{
+    const qr = io.getQr();
+    const nombre = io.getNombre();
+    const tipo = io.getTipo();
+    if(qr !== null && nombre !== null && tipo !== null){
+        io.credencialPdf(qr,nombre,tipo);
+    }else{
+        alert('No hay datos');
+    }
+});
+
+
 
 function textQr(texto) {
     io.datosQr(texto);

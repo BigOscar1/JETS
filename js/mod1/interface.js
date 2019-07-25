@@ -1,94 +1,132 @@
-class Interface{
+class Interface {
 
-    constructor(id,estado){
+    constructor(id, estado, qr, nombre, tipo) {
         this.estado = estado;
         this.id = id;
+        this.qr = qr;
+        this.nombre = nombre;
+        this.tipo = tipo;
         this.init();
     }
 
-    init(){
+    init() {
         this.totalRegistro();
     }
 
-    getEstado(){
+    getEstado() {
         return this.estado;
     }
-    getId(){
+    getId() {
         return this.id;
     }
+    getQr() {
+        return this.qr;
+    }
+    getNombre() {
+        return this.nombre;
+    }
+    getTipo() {
+        return this.tipo;
+    }
 
-    datosPersona(digito){
+    datosPersona(digito) {
+        // debugger
         let url = cnx.getUrl();
         url += `persona-digito/${digito}`;
         cnx.get(url)
-        .then(res =>{
-            console.log(res);
-            const datos = res.persona;
-            if(datos.length > 0){
-                const {nombres,apaterno,amaterno,ci,id,estado} = datos[0];
-                console.log(datos);
-                console.log(nombres);
-                const campos = document.querySelectorAll('#datos .form-control');
-                campos[0].value = nombres;
-                campos[1].value = apaterno;
-                campos[2].value = amaterno;
-                campos[3].value = ci;
-                this.id = id;
-                this.estado = estado;
-            }else{
-                this.limpiar();
-                console.log('no existe la persona');
-            }
-        })
-        .catch(err =>{
-            console.log(err);
-        })
+            .then(res => {
+                console.log(res);
+                const datos = res.persona;
+                if (datos.length > 0) {
+                    const {
+                        nombres,
+                        apaterno,
+                        amaterno,
+                        ci,
+                        id,
+                        estado,
+                        credenciale: {
+                            codigoQr
+                        },
+                        role: {
+                            rol
+                        }
+                    } = datos[0];
+                    console.log(datos);
+                    console.log(nombres);
+                    console.log(codigoQr);
+                    console.log(rol);
+
+                    const campos = document.querySelectorAll('#datos .form-control');
+                    campos[0].value = nombres;
+                    campos[1].value = apaterno;
+                    campos[2].value = amaterno;
+                    campos[3].value = ci;
+                    const n = this.quitEspacio(nombres);
+                    const ap = apaterno;
+                    const am = amaterno;
+                    const nomCompleto = `${n} ${ap} ${am}`;
+                    this.nombre = nomCompleto;
+                    this.qr = codigoQr;
+                    this.tipo = rol;
+                    this.id = id;
+                    this.estado = estado;
+                } else {
+                    this.limpiar();
+                    console.log('no existe la persona');
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
-    registrarPersona(id){
+    registrarPersona(id) {
         let url = cnx.getUrl();
         url += `persona/${id}`;
         let json = {
             estado: 'R'
         }
-        cnx.put(json,url)
-        .then(res => {
-            const per = [res.persona];
-            console.log(per);
-            if(per.length > 0){
-                alert('Registro Exitoso');
-                this.limpiar();
-                digito.value = '';
-                this.totalRegistro();
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            alert(err);
-        });
+        cnx.put(json, url)
+            .then(res => {
+                const per = [res.persona];
+                console.log(per);
+                if (per.length > 0) {
+                    alert('Registro Exitoso');
+                    this.limpiar();
+                    digito.value = '';
+                    this.totalRegistro();
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                alert(err);
+            });
     }
 
-    totalRegistro(){
+    totalRegistro() {
         let url = cnx.getUrl();
         url += 'persona-reg';
         cnx.get(url)
-        .then(res => {
-            console.log(res.persona);
-            const datos = res.persona;
-            if(datos.length > 0){
-                const {Total}  = datos[0];
-                registroTotal.textContent = Total;
-            }else{
-                console.log('no hay datos');
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        });
+            .then(res => {
+                console.log(res.persona);
+                const datos = res.persona;
+                if (datos.length > 0) {
+                    const {
+                        Total
+                    } = datos[0];
+                    registroTotal.textContent = Total;
+                } else {
+                    console.log('no hay datos');
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     scan() {
-      cordova.plugins.barcodeScanner.scan(this.succes, this.error);
+        cordova.plugins.barcodeScanner.scan(this.succes, this.error);
     }
 
     succes(result) {
@@ -106,42 +144,101 @@ class Interface{
         alert("Scanning failed: " + err);
     }
 
-    datosQr(qr){
+    datosQr(qr) {
         let url = cnx.getUrl();
         url += `persona-cre/${qr}`;
         cnx.get(url)
-        .then(res => {  
-            console.log(res);
-            const datos = res.persona;
-            if(datos.length > 0){
-                const {nombres,apaterno,amaterno,ci,id,estado} = datos[0];
-                console.log(datos);
-                console.log(nombres);
-                const campos = document.querySelectorAll('#datos .form-control');
-                campos[0].value = nombres;
-                campos[1].value = apaterno;
-                campos[2].value = amaterno;
-                campos[3].value = ci;
-                this.id = id;
-                this.estado = estado;
-            }else{
-                this.limpiar();
-                console.log('no existe la persona');
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        })
+            .then(res => {
+                console.log(res);
+                const datos = res.persona;
+                if (datos.length > 0) {
+                    const {
+                        nombres,
+                        apaterno,
+                        amaterno,
+                        ci,
+                        id,
+                        estado,
+                        credenciale: {
+                            codigoQr
+                        },
+                        role: {
+                            rol
+                        }
+                    } = datos[0];
+                    console.log(datos);
+                    console.log(nombres);
+                    const campos = document.querySelectorAll('#datos .form-control');
+                    campos[0].value = nombres;
+                    campos[1].value = apaterno;
+                    campos[2].value = amaterno;
+                    campos[3].value = ci;
+                    const n = this.quitEspacio(nombres);
+                    const ap = apaterno;
+                    const am = amaterno;
+                    const nomCompleto = `${n} ${ap} ${am}`;
+                    this.nombre = nomCompleto;
+                    this.qr = codigoQr;
+                    this.tipo = rol;
+                    this.id = id;
+                    this.estado = estado;
+                } else {
+                    this.limpiar();
+                    console.log('no existe la persona');
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            })
 
     }
 
-    limpiar(){
+  async  credencialPdf(codigo, nom, tipo) {
+        const qr = codigo.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
+        const imgQr = create_qrcode(qr);
+        let doc = new jsPDF()
+        doc.setFontSize(40)
+        // doc.text(55, 55, 'CREDENCIAL')
+        // console.log(doc.internal.pageSize.width);
+        // console.log(doc.internal.pageSize.height);
+        // const x = doc.internal.pageSize.width;
+        // const y = doc.internal.pageSize.height;
+        this.centrar(doc,'CREDENCIAL',50);
+        doc.setFontSize(20)
+        doc.text(72, 70, tipo)
+        doc.addImage(imgQr, 'JPEG', 50, 70, 100, 100)
+        doc.setFontSize(20)
+        doc.text(60, 170, nom)
+        window.open(doc.output('bloburl'));
+
+    }
+
+    centrar(doc,text,y) {
+        let textWidth = doc.getStringUnitWidth(text) * doc.internal.getFontSize()/doc.internal.scaleFactor;
+        let textOffset = (doc.internal.pageSize.width - textWidth)/2;
+        doc.text(textOffset, y, text);
+    }
+    quitEspacio(str) {
+        let cadena = '';
+        let arrayString = str.split(' ');
+        for (let i = 0; i < arrayString.length; i++) {
+            if (arrayString[i] != "") {
+                cadena += arrayString[i];
+            }
+        }
+        return cadena;
+    }
+
+    limpiar() {
         const campos = document.querySelectorAll('#datos .form-control');
-        for(let i = 0; i<campos.length; i++){
+        for (let i = 0; i < campos.length; i++) {
             campos[i].value = '';
-         }
+        }
         this.id = null;
         this.estado = null;
+        this.qr = null;
+        this.nombre = null;
+        this.tipo = null;
     }
 }
 
