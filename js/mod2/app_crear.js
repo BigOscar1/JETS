@@ -14,6 +14,19 @@ const registroTotalCuen = document.querySelector('#totalreg');
 //funciones
 
 
+document.getElementById('cancelar-Cuenta').addEventListener('click', () => {
+    $('#tipo').val('11')
+    $('#ci').val('');
+    $('#name').val('');
+    $('#paterno').val('');
+    $('#materno').val('');
+    $('#datepicker').val('');
+    $('#phone').val('');
+    $('#email').val('');
+    $('#descripcion').val('');
+    $('#M').prop( "checked", true );
+    $('#F').prop( "checked", false );
+})
 
 crearUsu.addEventListener('click', () => {
     let tipo = $('#tipo').val()
@@ -84,6 +97,17 @@ crearUsu.addEventListener('click', () => {
                 timer: 1000
             })
             crearCuenta.registrarPersona(datos);
+            $('#tipo').val('11')
+            $('#ci').val('');
+            $('#name').val('');
+            $('#paterno').val('');
+            $('#materno').val('');
+            $('#datepicker').val('');
+            $('#phone').val('');
+            $('#email').val('');
+            $('#descripcion').val('');
+            $('#M').prop( "checked", true );
+            $('#F').prop( "checked", false );
         } else if (
             // Read more about handling dismissals
             result.dismiss === Swal.DismissReason.cancel
