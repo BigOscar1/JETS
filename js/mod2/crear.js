@@ -26,7 +26,7 @@ class crear{
             console.log(per);
             if(per.length > 0){
                 alert('Cuenta Creada');
-                this.limpiar();
+                // this.limpiar();
                 digito.value = '';
                 this.totalRegistro();
             }

@@ -6,9 +6,15 @@ $("#feria").click(function () {
   location.href = "html/feria.html";
 });
 
+
+$("#cronograma").click(function () {
+  location.href = "html/cronograma.html";
+});
+
+
 $('#datepicker').datepicker({
   uiLibrary: 'bootstrap',
-   format: 'dd mm yyyy' 
+   format: 'dd-mm-yyyy' 
 });
 
 $("#reportes").click(function () {
