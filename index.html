@@ -135,12 +135,12 @@
             </div>
           </div>
         <div class="col-4 separacion">
-          <div class="card text-white bg-secondary card-button reg" data-toggle="modal" data-target="#crearCuenta">
+          <div class="card text-white bg-secondary card-button reg" id="reportes">
             <div class="card-body">
               <div class="car-flex">
                 <img class="icon" src="./external/icons/register.png" alt="" srcset="">
               </div>
-              <p class="card-text car-flex">CREAR</p>
+              <p class="card-text car-flex">REPORTES</p>
             </div>
             <span id="totalreg" class="badge badge-danger badge-down">0</span>
           </div>
@@ -409,8 +409,7 @@
 
 
   <script src="./js/app.js"></script>
-
-  <script src="./js/principal.js"></script> 
+  <script src="./js/principal.js"></script>
 
   <script>
     $("#speaker").click(function () {
@@ -419,6 +418,10 @@
 
     $("#feria").click(function () {
       location.href = "html/feria.html";
+    });
+
+    $("#reportes").click(function () {
+      location.href = "html/reportes.html";
     });
   </script>
 </body>
