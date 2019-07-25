@@ -83,14 +83,33 @@ header {
     align-items: center;
     justify-content: center;
 }
-
-.modal-body{
- background-color: var(--color-fondo);  
-}
 .col-3{
-    color: var(--color-titulos);
+    color: #ffffff;
 }
 
 .fondo{
     color: var(--color-fondo);
+}
+.card-button {
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px -5px  rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    background-color: var(--color-fondo) ;
+}
+
+.card-button:active {
+    box-shadow: none;
+    text-shadow: 1px 1px 6px #fff;
+    top: 2px;
+    left: 2px;
+}
+.boton{
+    display: inline-block;
+    margin-left: 1rem;
+}
+.inscribir{
+    background-color: var(--color-titulos);
+}
+.encuesta{
+    background-color: var(--color-fondo);
 }
