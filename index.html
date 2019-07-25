@@ -16,6 +16,11 @@
   <link rel="stylesheet" href="./css/loader.css">
   <!-- Jquery -->
   <script src="./external/js/jquery-3.4.1.min.js"></script>
+  <!-- jspdf nesesario -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.0.2/base64.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.1.2/sprintf.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 </head>
 
 <body>
@@ -222,7 +227,10 @@
             </form>
 
           </div>
+          
+          
           <div class="modal-footer ">
+            <button type="button" id="credencial" class="btn btn-primary btn-2">Credencial</button>
             <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal">Cancelar</button>
             <button type="button" id="reg" class="btn btn-primary btn-2">Registrar</button>
           </div>
@@ -390,11 +398,13 @@
 
   <!-- Principal -->
   <script type="text/javascript" src="cordova.js"></script>
+  <script src="./js/reporte/qrcode.js"></script>
   <script src="./js/scanner.js"></script>
   <script src="./js/conexion/conexion.js"></script>
   <script src="./js/mod1/interface.js"></script>
   <script src="./js/mod1/app.js"></script>
 
+  <script src="./js/reporte/qrcode.js"></script>
   <script src="./js/reporte/generalQr.js"></script>
 
 
