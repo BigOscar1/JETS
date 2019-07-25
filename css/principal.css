@@ -85,6 +85,10 @@ border-radius: 0 0px 5px 5px;
     width: 50%;
 }
 
+.btn-full {
+    width: 100%;
+}
+
 .blanco {
     color: white;
   

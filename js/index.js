@@ -8,7 +8,7 @@ $("#feria").click(function () {
 
 $('#datepicker').datepicker({
   uiLibrary: 'bootstrap',
-   format: 'dd mm yyyy' 
+   format: 'dd-mm-yyyy' 
 });
 
 $("#reportes").click(function () {
