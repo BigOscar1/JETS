@@ -22,11 +22,14 @@ let aux;
 let contY = 60;
 let imgY = 50;
 
+const btnReport = document.querySelector('#generarRepor');
+
 
 // funciones 
 
 
 const programacion = () => {
+    inicio();
     let url = cnxG.getUrl();
     url += 'mat-qr';
     materias = [];
@@ -235,10 +238,30 @@ const generarPdf = () => {
 
     }
     window.open(doc.output('bloburl'));
+    fin();
 
 }
 
-var doc = new jsPDF()
+btnReport.addEventListener('click',()=>{
+    programacion();
+});
+
+
+
+function inicio(){
+    console.log("inicio");
+
+    $(".loader-page").css({visibility:"visible",opacity:"10"})
+
+}
+function fin(){
+    console.log("fin");
+
+    $(".loader-page").css({visibility:"hidden",opacity:"0"})
+
+}
+
+// var doc = new jsPDF()
 
 // doc.setFontSize(10)
 // doc.text(15, 25, 'GRUPO:AA')
