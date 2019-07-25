@@ -19,11 +19,6 @@ body {
     background-size: contain;    
 }
 
-main {
-
-
-}
-
 .badge-down {
 border-radius: 0 0px 5px 5px;
 }
@@ -90,6 +85,10 @@ border-radius: 0 0px 5px 5px;
     width: 50%;
 }
 
+.btn-full {
+    width: 100%;
+}
+
 .blanco {
     color: white;
   
@@ -116,4 +115,8 @@ label {
 
 .carousel-item {
     border-radius: 5px;
+}
+
+tr {
+    background-color: rgba(0, 0, 0, 0.9);
 }
