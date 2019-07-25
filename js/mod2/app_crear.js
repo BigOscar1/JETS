@@ -39,10 +39,10 @@ crearUsu.addEventListener('click', () => {
 
     if (tipo != "1") {
         registro = ci
-    }else{
+    } else {
         registro = $('#registroEstudiante').val();
         descripcion = "estudiante";
-    } 
+    }
 
     let datos = {
         nombres: name,
@@ -51,14 +51,50 @@ crearUsu.addEventListener('click', () => {
         ci: ci,
         phone1: phone,
         phone2: "",
-        email:  email,
+        email: email,
         registro: registro,
         fechnaci: fecnaNac,
         sexo: genero,
         estado: "N",
         idrol: tipo
-    } 
+    }
 
-    crearCuenta.registrarPersona(datos);
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false,
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: 'Estas Seguro?',
+        text: "Revise todos los campos",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Guardar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.value) {
+            swalWithBootstrapButtons.fire({
+                title: 'Cuenta Creada!',
+                type: 'success',
+                showConfirmButton: false,
+                timer: 1000
+            })
+            crearCuenta.registrarPersona(datos);
+        } else if (
+            // Read more about handling dismissals
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: 'No se Creo la Cuenta',
+                type: 'error',
+                showConfirmButton: false,
+                timer: 1000
+            })
+        }
+    })
 });
 
