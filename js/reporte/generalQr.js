@@ -206,7 +206,7 @@ const generarPdf = () => {
                 doc.text(85, contY, estudianteAm)
                 doc.text(115, contY, estudiante)
                 doc.text(145, contY, '.............')
-                doc.addImage(imgQr, 'JPEG', 165, imgY, 12, 12)
+                doc.addImage(imgQr, 'PNG', 165, imgY, 12, 12)
                 contY += 11;
                 imgY += 11;
 
@@ -217,7 +217,7 @@ const generarPdf = () => {
                 doc.text(85, contY, estudianteAm)
                 doc.text(115, contY, estudiante)
                 doc.text(145, contY, '.............')
-                doc.addImage(imgQr, 'JPEG', 165, imgY, 12, 12)
+                doc.addImage(imgQr, 'PNG', 165, imgY, 12, 12)
                 contY += 11;
                 imgY += 11;
             }
