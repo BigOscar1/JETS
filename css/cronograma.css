@@ -22,4 +22,10 @@ td{
 tr{
     text-align: center;
 }
+.boton{
+    position: fixed;
+    bottom:5px;
+    right:10px;
+ 
+}
 
