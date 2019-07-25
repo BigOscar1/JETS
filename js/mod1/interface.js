@@ -11,6 +11,7 @@ class Interface {
 
     init() {
         this.totalRegistro();
+        this.limpiar();
     }
 
     getEstado() {
