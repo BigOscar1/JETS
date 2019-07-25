@@ -11,6 +11,10 @@ $('#datepicker').datepicker({
    format: 'dd mm yyyy' 
 });
 
+$("#reportes").click(function () {
+  location.href = "html/reportes.html";
+});
+
 $("#tipo").click(function () {
   const usuario = $("#tipoUsuario");
   let tipo = $("#tipo").val()
