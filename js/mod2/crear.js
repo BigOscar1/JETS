@@ -7,7 +7,7 @@ class crear{
     }
 
     init(){
-        this.totalRegistro();
+        this.totalCuentas();
     }
 
     getEstado(){
@@ -37,16 +37,16 @@ class crear{
         });
     }
 
-    totalRegistro(){
+    totalCuentas(){
         let url = cnx.getUrl();
-        url += 'persona-reg';
+        url += 'persona';
         cnx.get(url)
         .then(res => {
             console.log(res.persona);
             const datos = res.persona;
             if(datos.length > 0){
                 const {Total}  = datos[0];
-                registroTotal.textContent = Total;
+                registroTotalCuenta.textContent = datos.length;
             }else{
                 console.log('no hay datos');
             }

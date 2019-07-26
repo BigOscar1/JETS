@@ -24,4 +24,3 @@ entregas.addEventListener('click',()=>{
 })
 
 
-hgigggg

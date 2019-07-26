@@ -7,7 +7,7 @@ const crearCuenta = new crear();
 //variables globales
 
 const crearUsu = document.querySelector('#crear');
-const registroTotalCuen = document.querySelector('#totalreg');
+const registroTotalCuenta = document.querySelector('#totalcre');
 
 
 
