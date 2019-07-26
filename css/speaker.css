@@ -113,3 +113,7 @@ header {
 .encuesta{
     background-color: var(--color-fondo);
 }
+.modal-img{
+    height: 16rem;
+    width: 100%;
+}
