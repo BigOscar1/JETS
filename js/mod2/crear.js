@@ -39,17 +39,13 @@ class crear{
 
     totalCuentas(){
         let url = cnx.getUrl();
-        url += 'persona';
+        url += 'persona-count';
         cnx.get(url)
         .then(res => {
-            console.log(res.persona);
+            // debugger
+            console.log(res);
             const datos = res.persona;
-            if(datos.length > 0){
-                const {Total}  = datos[0];
-                registroTotalCuenta.textContent = datos.length;
-            }else{
-                console.log('no hay datos');
-            }
+                registroTotalCuenta.textContent = datos
         })
         .catch(err => {
             console.log(err);
