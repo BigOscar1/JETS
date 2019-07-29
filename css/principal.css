@@ -97,7 +97,7 @@ border-radius: 0 0px 5px 5px;
 
 .icon {
     height: 48px;
-    width: 48px;
+ 
     margin-bottom: .3rem;
 }
 
@@ -120,3 +120,4 @@ label {
 tr {
     background-color: rgba(0, 0, 0, 0.9);
 }
+
