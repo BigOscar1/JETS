@@ -96,8 +96,8 @@ a
 }
 
 .icon {
-    height: 48px;
-    width: 48px;
+    height: 40px;
+
     margin-bottom: .3rem;
 }
 
@@ -120,7 +120,6 @@ label {
 tr {
     background-color: rgba(0, 0, 0, 0.9);
 }
-<<<<<<< HEAD
 #credencial{
     background-color: rgba(207, 10, 44, 1);
     border-color: rgba(207, 10, 44, 1);
@@ -152,6 +151,8 @@ tr {
     background-color: rgba(207, 10, 44, 1);
     border-color: rgba(207, 10, 44, 1);
 }
-=======
-
->>>>>>> eb294bf12634baa243edd6ede2238951efc63a5a
+#credencial{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+    margin-bottom: 7px;
+}
