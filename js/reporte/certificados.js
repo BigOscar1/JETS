@@ -3,11 +3,12 @@ const cnxC = new Conexion();
 
 //variables globales
 
-
+const certificado  = document.querySelector('#certificado');
 
 //funciones
 
 const personaReg = () => {
+    inicio();
     let url = cnxC.getUrl();
     url += 'persona-cert';
     cnxC.get(url)
@@ -76,7 +77,9 @@ const certificados = (personas) => {
 
 
     }
+    fin();
     window.open(doc.output('bloburl'));
+
 }
 
 const centrar = (doc, text, y) => {
@@ -102,6 +105,10 @@ const formato = (x) => {
 
     return nombres;
 }
+
+certificado.addEventListener('click',()=>{
+    personaReg();
+});
 
 
 

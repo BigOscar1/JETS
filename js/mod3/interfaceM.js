@@ -17,11 +17,12 @@ class InterfaceM {
             const datos = res.persona;
             console.log(datos.length);
             if(datos.length > 0){
+                bool = false;
                 const {nombres,apaterno,amaterno,ci,registro,materiales} = datos[0];
                 this.reg = registro;
                 console.log(nombres,apaterno,amaterno,ci,registro);
                 console.log(materiales.length);
-                debugger
+                // debugger
                 (materiales.length > 0) ? (fecEntregadas = materiales): (fecEntregadas = 'No Hay Datos')
                 const campos = document.querySelectorAll('#datosM .form-control');
                 campos[0].value = nombres;
