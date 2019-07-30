@@ -117,3 +117,24 @@ header {
     height: 16rem;
     width: 100%;
 }
+#encuesta{
+    background-color: rgba(85, 87, 89, 1);;
+    border-color: rgba(85, 87, 89, 1);
+}
+#inscribir{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+}
+#reg{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+}
+#verificar{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+    margin-top: 7px;
+}
+#scan{
+    background-color: rgba(85, 87, 89, 1);
+    border-color: rgba(85, 87, 89, 1);
+}
