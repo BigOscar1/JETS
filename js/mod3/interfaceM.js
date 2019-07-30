@@ -1,5 +1,13 @@
 class InterfaceM {
 
+    constructor(reg){
+        this.reg = reg;
+    }
+
+    getReg(){
+        return this.reg;
+    }
+
     personaReg(digito){
         let url = cnxM.getUrl();
         url += `persona-mat/${digito}`;
@@ -10,8 +18,11 @@ class InterfaceM {
             console.log(datos.length);
             if(datos.length > 0){
                 const {nombres,apaterno,amaterno,ci,registro,materiales} = datos[0];
+                this.reg = registro;
                 console.log(nombres,apaterno,amaterno,ci,registro);
                 console.log(materiales.length);
+                debugger
+                (materiales.length > 0) ? (fecEntregadas = materiales): (fecEntregadas = 'No Hay Datos')
                 const campos = document.querySelectorAll('#datosM .form-control');
                 campos[0].value = nombres;
                 campos[1].value = apaterno;
@@ -20,7 +31,26 @@ class InterfaceM {
             }else{
                 console.log('no hay datos');
                 this.limpiar();
+                fecEntregadas = 'No Hay Datos';
             }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+    entregaMat(rg){
+        let url = cnxM.getUrl();
+        url += 'material'
+        let json = {
+            material:'Polera y accesorios',
+            estado:'E',
+            reg:rg
+        }
+        cnxM.post(json,url)
+        .then(res => {
+            console.log(res);
+            this.limpiar();
         })
         .catch(err => {
             console.log(err);
@@ -31,7 +61,8 @@ class InterfaceM {
         const campos = document.querySelectorAll('#datosM .form-control');
         for (let i = 0; i < campos.length; i++) {
             campos[i].value = '';
-        }   
+        }  
+        this.reg = null; 
     }
 }
 

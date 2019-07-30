@@ -7,7 +7,9 @@ const ioM = new InterfaceM();
 const verificarM = document.querySelector('#verificarM');
 const digitoM = document.querySelector('#digitosM');
 const entregas = document.querySelector('#Entregas');
+const regMat = document.querySelector('#regM');
 
+let fecEntregadas = 'No Hay Datos' ;
 //funciones
 
 verificarM.addEventListener('click',()=>{
@@ -20,7 +22,42 @@ verificarM.addEventListener('click',()=>{
 });
 
 entregas.addEventListener('click',()=>{
+    // debugger
+    let fec = '';
+    if(fecEntregadas !== 'No Hay Datos'){
+        for (let i = 0; i < fecEntregadas.length; i++) {
+                 fec += `<li>Fecha Entregada: ${fecEntregadas[i].createdAt}</li>`;    
+        }
+        console.log(fec);
+        fecEntregadas = fec;
+    } 
+    else{
+        fecEntregadas = 'No Hay Datos'
+    }
+    Swal.fire({
+        title: '<strong>Fechas Entregadas</strong>',
+        type: 'info',
+        html:
+          fecEntregadas,
+        showCloseButton: true,
+        showCancelButton: false,
+        focusConfirm: false,
+        confirmButtonText:
+          '<i class="fa fa-thumbs-up"></i> Ok',
+        // confirmButtonAriaLabel: 'Thumbs up, great!',
+        // cancelButtonText:
+        //   '<i class="fa fa-thumbs-down"></i>',
+        // cancelButtonAriaLabel: 'Thumbs down',
+      })
+});
 
-})
+regMat.addEventListener('click',()=>{
+    // debugger;
+    const reg = ioM.getReg();
+    if((reg !== null) && (reg !== undefined))
+    ioM.entregaMat(reg);
+    else
+    alert('No Valido');
+});
 
 
