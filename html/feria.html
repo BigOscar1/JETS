@@ -1,307 +1,63 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png"> -->
-    <title>Calificaciones</title>
-    <!-- Custom CSS -->
-    <link href="../css/feria.css" rel="stylesheet">
-    <link href="../css/feria2.css" rel="stylesheet">
-    <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JETS</title>
+    <!-- External -->
+    <link rel="stylesheet" href="../external/css/gijgo.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap-reboot.min.css">
 
-    <!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- JETS -->
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/feria.css">
+    <!-- <link rel="stylesheet" href="./css/cronograma.css"> -->
+    <!-- Jquery -->
+    <script src="../external/js/jquery-3.4.1.min.js"></script>
+    <!-- jspdf nesesario -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.0.2/base64.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.1.2/sprintf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
-    <link rel="stylesheet" href="../css/feria3.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
+    <header>
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Calificaciones</h4>
+                    <div class="ml-auto text-right">
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5">
-                    <!-- This is for the sidebar toggle which is visible on mobile only -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
-                    <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon -->
-                        <b class="logo-icon p-l-10">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <!-- <img src="./assets/images/logo-icon.png" alt="homepage" class="light-logo" /> -->
+    </header>
 
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            Feria
-
-                        </span>
-                        <!-- Logo icon -->
-                        <!-- <b class="logo-icon"> -->
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <!-- <img src="./assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-
-                        <!-- </b> -->
-                        <!--End Logo icon -->
-                    </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
-                    <!-- Toggle which is visible on mobile only -->
-                    <!-- ============================================================== -->
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
-                        data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><img
-                            src="./icons/more.png" alt="" srcset=""></a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a
-                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
-                        <!-- ============================================================== -->
-                        <!-- create new -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><img class="icons" src="./icons/loupe.png" alt=""
-                                    srcset=""></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Buscar"> <a class="srh-btn"><i
-                                        class="ti-close"></i></a>
-                            </form>
-                        </li>
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- Right side toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-right">
-                        <!-- ============================================================== -->
-                        <!-- Comment -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- End Comment -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Messages -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- End Messages -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="icons"
-                                    src="./icons/man.png" alt="user" class="rounded-circle" width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="ti-user m-r-5 m-l-5"></i>Perfil</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)" id="desconectarse"><i
-                                        class="fa fa-power-off m-r-5 m-l-5"></i>Desconectarse</a>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin5">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link "
-                                href="index.html" aria-expanded="false"><i><img class="icons-regular"
-                                        src="./icons/home.png" alt="" srcset=""></i><span
-                                    class="hide-menu">Inicio</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="charts.html" aria-expanded="false"><i><img class="icons-regular"
-                                        src="./icons/file.png" alt="" srcset=""></i><span
-                                    class="hide-menu">Acciones</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active"
-                                href="widgets.html" aria-expanded="false"><i><img class="icons-regular"
-                                        src="./icons/checklist.png" alt="" srcset=""></i><span
-                                    class="hide-menu">Evaluaciones</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tables.html" aria-expanded="false"><i><img class="icons-regular"
-                                        src="./icons/search.png" alt="" srcset=""></i><span
-                                    class="hide-menu">Proyectos</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="grid.html" aria-expanded="false"><i><img class="icons-regular"
-                                        src="./icons/chart.png" alt="" srcset=""></i><span
-                                    class="hide-menu">Reportes</span></a></li>
+    <main>
 
 
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Calificaciones</h4>
-                        <div class="ml-auto text-right">
+        <div class="container-fluid">
+            <div class="form-group row">
+                <div class="col-sm-4 text-center ">
 
-                        </div>
+                    <div data-role="main" class="ui-content ">
+
+                        <p>
+                            <a style="text-decoration: none"><button
+                                    class="btn btn-warning btn-lg btn-flex-medio">Scan</button></a>
+                        </p>
+
                     </div>
                 </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <div class="form-group row">
-                    <div class="col-sm-4 text-center ">
 
-                        <div data-role="main" class="ui-content ">
-
-                            <p>
-                                <a target="_blank" href="javascript:ioC.scan();" style="text-decoration: none"><button
-                                        class="btn btn-warning btn-lg btn-flex-medio">Scan</button></a>
-                            </p>
-
-                        </div>
-                    </div>
-
-                    <label for="fclass" class="col-sm-3 text-center control-label col-form-label">Codigo</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control espacio-abajo" id="clave"
-                            placeholder="Ingrese el codigo">
-                    </div>
-                    <div class="col-sm-4 text-center ">
-                        <button type="button" class="form-contro btn btn-lg btn-primary btn-flex-medio"
-                            id="verificar">Verificar</button>
-                    </div>
-                </div>
-                <hr>
-                <!-- <div class="row">
-                    <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                        <div class="card card-hover">
-                            <div class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                data-target="#1">
-                                <h1 class="font-light text-white"><i><img class="icons-logo"
-                                            src="./icons/presentacion.png" alt="" srcset=""></i></h1>
-                                <h6 class="text-white">PRESENTACION</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                        <div class="card card-hover">
-                            <div class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                data-target="#2">
-                                <h1 class="font-light text-white"><i><img class="icons-logo"
-                                            src="./icons/planteamiento.png" alt="" srcset=""></i></h1>
-                                <h6 class="text-white">PLANTEAMIENTO</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                        <div class="card card-hover">
-                            <div class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                data-target="#3">
-                                <h1 class="font-light text-white"><i><img class="icons-logo"
-                                            src="./icons/integridad.png" alt="" srcset=""></i></h1>
-                                <h6 class="text-white">DESARROLLO DEL PROYECTO E INTEGRIDAD</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                        <div class="card card-hover">
-                            <div class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                data-target="#4">
-                                <h1 class="font-light text-white"><i><img class="icons-logo"
-                                            src="./icons/profundidad.png" alt="" srcset=""></i></h1>
-                                <h6 class="text-white">PROFUNDIDAD</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 col-lg-12 col-xlg-12">
-                        <div class="card card-hover">
-                            <div class="box bg-success  text-center" data-toggle="modal" data-target="#5">
-                                <h1 class="font-light text-white"><i><img class="icons-logo"
-                                            src="./icons/innovacion.png" alt="" srcset=""></i></h1>
-                                <h6 class="text-white">MERITO TECNICO E INNOVACION</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <hr>
                 <div id="contenido" style="display: block;">
                     <div class="col">
                         <div class="card">
@@ -313,335 +69,59 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="row">
-                        <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                            <div class="card card-hover">
-                                <div id="pre" class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                    data-target="#1">
-                                    <h1 class="font-light text-white"><i><img class="icons-logo"
-                                                src="./icons/presentacion.png" alt="" srcset=""></i></h1>
-                                    <h6 class="text-white">PRESENTACION</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                            <div class="card card-hover">
-                                <div id="pla" class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                    data-target="#2">
-                                    <h1 class="font-light text-white"><i><img class="icons-logo"
-                                                src="./icons/planteamiento.png" alt="" srcset=""></i></h1>
-                                    <h6 class="text-white">PLANTEAMIENTO</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                            <div class="card card-hover">
-                                <div id="des" class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                    data-target="#3">
-                                    <h1 class="font-light text-white"><i><img class="icons-logo"
-                                                src="./icons/integridad.png" alt="" srcset=""></i></h1>
-                                    <h6 class="text-white">DESARROLLO DEL PROYECTO E INTEGRIDAD</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                            <div class="card card-hover">
-                                <div id="pro" class="box box-evaluacion bg-success  text-center" data-toggle="modal"
-                                    data-target="#4">
-                                    <h1 class="font-light text-white"><i><img class="icons-logo"
-                                                src="./icons/profundidad.png" alt="" srcset=""></i></h1>
-                                    <h6 class="text-white">PROFUNDIDAD</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-12 col-lg-12 col-xlg-12">
-                            <div class="card card-hover">
-                                <div id="mer" class="box bg-success  text-center" data-toggle="modal" data-target="#5">
-                                    <h1 class="font-light text-white"><i><img class="icons-logo"
-                                                src="./icons/innovacion.png" alt="" srcset=""></i></h1>
-                                    <h6 class="text-white">MERITO TECNICO E INNOVACION</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div id="contenido" style="display: block;">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group row" id="grupoName">
-    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 separacion">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#registro">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/1.png" alt="" srcset="">
+                                        </div>
+                                        <p class="card-text car-flex">PRESENTACION</p>
                                     </div>
+                                    <span id="totalreg" class="badge badge-danger badge-down">0</span>
+                                </div>
+                            </div>
+                            <div class="col-4 separacion">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#crearCuenta">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/3.png" alt="" srcset="">
+                                        </div>
+                                        <p class="card-text car-flex">
+                                            <h6>PLANTEAMIENTO</h6>
+                                        </p>
+                                    </div>
+                                    <span id="totalcre" class="badge badge-danger badge-down">0</span>
+                                </div>
+                            </div>
+                            <div class="col-4 separacion">
+                                <div class="card text-white bg-secondary card-button reg" id="cronograma">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/cronograma.png" alt=""
+                                                srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">DESARROLLO DEL PROYECTO E INTEGRIDAD</p>
+                                    </div>
+                                    <span class="badge badge-danger badge-down">0</span>
                                 </div>
                             </div>
                         </div>
-                    <!-- <div class="col" class="row">
-                        <div class="card">
-                            <div class="card-body">
-                              
-                                <div id="evaluar">
-                      
-                                </div>
-                                <div class="col-sm-4 text-center ">
-                                    <button type="button" class="form-contro btn btn-secondary"
-                                        id="guardarCali">Guardar</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> -->
-                </div>
-            
-                <!-- ============================================================== -->
-                <!-- End Container fluid  -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- footer -->
-                <!-- ============================================================== -->
-                <footer class="footer text-center">
-                    Centro de Desarrollo <a href="#">2019</a>.
-                </footer>
-                <!-- ============================================================== -->
-                <!-- End footer -->
-                <!-- ============================================================== -->
-            </div>
-            <div id='error' style="text-align: center; display: block;">
-                <h1>No Hay Contenido</h1>
-                <h1>Compurebe El Codigo</h1>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Page wrapper  -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Wrapper -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- All Jquery -->
-        <!-- ============================================================== -->
-        <!-- <script src="./assets/libs/jquery/dist/jquery.min.js"></script> -->
-        <!-- Button trigger modal -->
-
-        <!-- Modal 2-->
-        <div class="modal fade" id="1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">PRESENTACION</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-titulo">
-                            Criterio
-                        </div>
-                        <div class="modal-texto">
-                            La imagen, pulcritud y formalidad de la presentacion fue ideal
-                        </div>
-                        <form>
-                            <p class="clasificacion">
-                                <input id="radio1" type="radio" name="presentacion" value="20">
-                                <label class="separacion" for="radio1">★</label>
-                                <input id="radio2" type="radio" name="presentacion" value="16">
-                                <label class="separacion" for="radio2">★</label>
-                                <input id="radio3" type="radio" name="presentacion" value="12">
-                                <label class="separacion" for="radio3">★</label>
-                                <input id="radio4" type="radio" name="presentacion" value="8">
-                                <label class="separacion" for="radio4">★</label>
-                                <input id="radio5" type="radio" name="presentacion" value="4">
-                                <label class="separacion" for="radio5">★</label>
-                            </p>
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-warning btn-lg btn-flex-medio"
-                                 id="presentacion">Calificar</button>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="modal fade" id="2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">PLANTEAMINETO</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-titulo">
-                            Criterio
-                        </div>
-                        <div class="modal-texto">
-                            La Forma de exposicion fue clara y precisa
-                        </div>
-                        <form>
-                            <p class="clasificacion">
-                                <input id="radio1" type="radio" name="planteamiento" value="20">
-                                <label class="separacion" for="radio1">★</label>
-                                <input id="radio2" type="radio" name="planteamiento" value="16">
-                                <label class="separacion" for="radio2">★</label>
-                                <input id="radio3" type="radio" name="planteamiento" value="12">
-                                <label class="separacion" for="radio3">★</label>
-                                <input id="radio4" type="radio" name="planteamiento" value="8">
-                                <label class="separacion" for="radio4">★</label>
-                                <input id="radio5" type="radio" name="planteamiento" value="4">
-                                <label class="separacion" for="radio5">★</label>
-                            </p>
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" id="planteamiento" class="btn btn-warning btn-lg btn-flex-medio"
-                                data-dismiss="modal">Calificar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">DESARROLLO DEL PROYECTO E INTEGRIDAD</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-titulo">
-                            Criterio
-                        </div>
-                        <div class="modal-texto">
-                            El producto fue desarrollado en forma completa
-                        </div>
-                        <form>
-                            <p class="clasificacion">
-                                <input id="radio1" type="radio" name="desarrollo" value="25">
-                                <label class="separacion" for="radio1">★</label>
-                                <input id="radio2" type="radio" name="desarrollo" value="20">
-                                <label class="separacion" for="radio2">★</label>
-                                <input id="radio3" type="radio" name="desarrollo" value="15">
-                                <label class="separacion" for="radio3">★</label>
-                                <input id="radio4" type="radio" name="desarrollo" value="10">
-                                <label class="separacion" for="radio4">★</label>
-                                <input id="radio5" type="radio" name="desarrollo" value="5">
-                                <label class="separacion" for="radio5">★</label>
-                            </p>
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" id="desarrollo" class="btn btn-warning btn-lg btn-flex-medio"
-                                data-dismiss="modal">Calificar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">PROFUNDIDAD</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-titulo">
-                            Criterio
-                        </div>
-                        <div class="modal-texto">
-                            El proyecto aplica el contenido de la materia
-                        </div>
-                        <form>
-                            <p class="clasificacion">
-                                <input id="radio1" type="radio" name="profundida" value="25">
-                                <label class="separacion" for="radio1">★</label>
-                                <input id="radio2" type="radio" name="profundida" value="20">
-                                <label class="separacion" for="radio2">★</label>
-                                <input id="radio3" type="radio" name="profundida" value="15">
-                                <label class="separacion" for="radio3">★</label>
-                                <input id="radio4" type="radio" name="profundida" value="10">
-                                <label class="separacion" for="radio4">★</label>
-                                <input id="radio5" type="radio" name="profundida" value="5">
-                                <label class="separacion" for="radio5">★</label>
-                            </p>
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" id="profundidad" class="btn btn-warning btn-lg btn-flex-medio"
-                                data-dismiss="modal">Calificar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">MERITO TECNICO E INNOVACION</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-titulo">
-                            Criterio
-                        </div>
-                        <div class="modal-texto">
-                            El proyecto presenta alguna tecnica o tecnologia extraordinaria y/o novedosa
-                        </div>
-                        <form>
-                            <p class="clasificacion">
-                                <input id="radio1" type="radio" name="merito" value="10">
-                                <label class="separacion" for="radio1">★</label>
-                                <input id="radio2" type="radio" name="merito" value="8">
-                                <label class="separacion" for="radio2">★</label>
-                                <input id="radio3" type="radio" name="merito" value="6">
-                                <label class="separacion" for="radio3">★</label>
-                                <input id="radio4" type="radio" name="merito" value="4">
-                                <label class="separacion" for="radio4">★</label>
-                                <input id="radio5" type="radio" name="merito" value="2">
-                                <label class="separacion" for="radio5">★</label>
-                            </p>
-                        </form>
-                        <div class="modal-footer">
-                            <button type="button" id="merito" class="btn btn-warning btn-lg btn-flex-medio"
-                                data-dismiss="modal">Calificar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </main>
+    <script src="../external/js/bootstrap.bundle.min.js"></script>
+    <script src="../external/js/gijgo.min.js"></script>
+    <script src="../external/js/sweetalert2@8.js"></script>
+    <!-- Principal -->
+    <script type="text/javascript" src="../cordova.js"></script>
 
 
-        <!-- Bootstrap tether Core JavaScript -->
-        <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- slimscrollbar scrollbar JavaScript -->
-        <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-        <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
-        <!--Wave Effects -->
-        <script src="../dist/js/waves.js"></script>
-        <!--Menu sidebar -->
-        <script src="../dist/js/sidebarmenu.js"></script>
-        <!--Custom JavaScript -->
-        <script src="../dist/js/custom.min.js"></script>
-        <!-- <script src="../js/conexion/conexion.js"></script>
-        <script src="../js/mod2/interfaceC.js"></script>
-        <script src="../js/mod2/collecionC.js"></script> -->
-        <!-- <script src="./js/mod2/scan.js"></script> -->
-        <!-- <script src="../js/mod2/appC.js"></script> -->
-        <script src="../js/sweetalert2@8.js"></script>
-        <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+
 
 </body>
 
