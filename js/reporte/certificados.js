@@ -3,42 +3,56 @@ const cnxC = new Conexion();
 
 //variables globales
 
-
+const certificado  = document.querySelector('#certificado');
 
 //funciones
 
-const personaReg = ()=>{
-    let url =  cnxC.getUrl();
+const personaReg = () => {
+    inicio();
+    let url = cnxC.getUrl();
     url += 'persona-cert';
     cnxC.get(url)
-    .then(res => {
-        console.log(res);
-        const datos = res.persona;
-        if(datos.length > 0){
-            console.log(datos);
-            const formateado = datos.map( x => {
+        .then(res => {
+            console.log(res);
+            const datos = res.persona;
+            if (datos.length > 0) {
+                console.log(datos);
+                const formateado = datos.map(x => {
                     //    debugger
-                        let materno;
-                        let paterno;
-                       (x.amaterno !== null) ? (  materno =  x.amaterno.replace(/ /g, "") ) : (materno = '');
-                       (x.paterno !== null) ? (  paterno = x.apaterno.replace(/ /g, "")) : ( paterno = '');
+                    let materno;
+                    let paterno;
+                    let m;
+                    let p;
+                    (x.amaterno !== null) ? (materno = x.amaterno.split(' ')) : (materno = '');
+                    (x.paterno !== null) ? (paterno = x.apaterno.split(' ')) : (paterno = '');
+                    (materno !== '') ? (m = formato(materno)) : (m = '');
+                    (paterno !== '') ? (p = formato(paterno)) : (p = '');
+                    const n = x.nombres.split(' ');
+                    const nombres = formato(n);
+                    console.log(nombres);
+                    console.log(m);
+                    console.log(p);
 
-                       const nombres =  x.nombres.replace(/ /g, "");
-                       const json = {nom: nombres, ap:paterno, am:materno};
-                       return json;
+                    // const nombres = x.nombres.replace(/ /g, "");
+                    const json = {
+                        nom: nombres,
+                        ap: p,
+                        am: m
+                    };
+                    return json;
 
-            });
-            console.log(formateado);
-            certificados(formateado);
-            
+                });
+                console.log(formateado);
+                certificados(formateado);
 
-        }else{
-            console.log('No hay datos');
-        }
-    })
-    .catch(err => {
-        console.log(err);
-    })
+
+            } else {
+                console.log('No hay datos');
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
 }
 
 
@@ -47,23 +61,25 @@ const certificados = (personas) => {
     let logo = new Image();
     let width = doc.internal.pageSize.getWidth();
     let height = doc.internal.pageSize.getHeight();
-    console.log(width,height);
+    console.log(width, height);
     logo.src = '../img/certificado.png';
-    doc.addImage(logo, 'PNG',0, 0, width, height);
+    doc.addImage(logo, 'PNG', 0, 0, width, height);
     doc.setFontSize(20);
     for (let i = 0; i < personas.length; i++) {
         // debugger;
         const nombre = `${personas[i].nom} ${personas[i].ap} ${personas[i].am}`;
         console.log(nombre);
-        centrar(doc,nombre,100);
-        if(i !== personas.length -1){
+        centrar(doc, nombre, 100);
+        if (i !== personas.length - 1) {
             doc.addPage();
-            doc.addImage(logo, 'PNG',0, 0, width, height);
+            doc.addImage(logo, 'PNG', 0, 0, width, height);
         }
 
-        
+
     }
+    fin();
     window.open(doc.output('bloburl'));
+
 }
 
 const centrar = (doc, text, y) => {
@@ -71,6 +87,28 @@ const centrar = (doc, text, y) => {
     let textOffset = (doc.internal.pageSize.width - textWidth) / 2;
     doc.text(textOffset, y, text);
 }
+
+const formato = (x) => {
+    const [uno = '', dos = '', tres = '', cuatro = '', cinco = ''] = x;
+    console.log(uno, dos, tres, cuatro, cinco);
+    let nombres = '';
+    if (uno !== '')
+        nombres += uno
+    if (dos !== '')
+        nombres += ` ${dos}`
+    if (tres !== '')
+        nombres += ` ${tres}`;
+    if (cuatro !== '')
+        nombres += ` ${cuatro}`;
+    if (cinco !== '')
+        nombres += ` ${cinco}`;
+
+    return nombres;
+}
+
+certificado.addEventListener('click',()=>{
+    personaReg();
+});
 
 
 
