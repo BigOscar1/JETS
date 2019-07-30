@@ -66,7 +66,7 @@ border-radius: 0 0px 5px 5px;
 .card-body {
     margin: -5px;
 }
-
+a
 .separacion {
     padding: 0.3rem .8rem;
 }
@@ -119,4 +119,35 @@ label {
 
 tr {
     background-color: rgba(0, 0, 0, 0.9);
+}
+#credencial{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+    margin-bottom: 7px;
+}
+#reg{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+}
+#verificar{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+    margin-top: 7px;
+}
+#verificarM{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+    margin-top: 7px;
+}
+#scan{
+    background-color: rgba(85, 87, 89, 1);
+    border-color:rgba(85, 87, 89, 1);
+}
+#Entregas{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
+}
+#crear{
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
 }
