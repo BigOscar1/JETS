@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Encuestas</title>
     <link rel="stylesheet" href="../css/encuestas.css">
+    <link rel="stylesheet" href="../external/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap-reboot.min.css">
+
+    <link rel="stylesheet" href="../css/loader.css">
+
+    <script src="../external/js/jquery-3.4.1.min.js"></script>
+
 </head>
-<body>
-    <form id="encuesta">
-        <div>
-            
-        </div>
-    </form>
+
+<body class="medio">
+    <div class="container ">
+        <form id="encuesta">
+            <div class="form-row ">
+                <div class="form-group col-12">
+                    <label class="pregunta" for="inputEmail4"><span class="pregunta-numero">1.</span> <span
+                            class="signos">¿</span> Cuál es el nivel de las conferencia <span
+                            class="signos">?</span></label>
+
+                    <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                            --><label class="estre" for="radio1">★</label><!--
+                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                            --><label class="estre" for="radio2">★</label><!--
+                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                            --><label class="estre" for="radio3">★</label><!-
+                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                            --><label class="estre" for="radio4">★</label><!--
+                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                            --><label class="estre" for="radio5">★</label>
+                          </p>
+                    <p class="miniLetas-clasificaicon">
+                        <label class="miniLetas">Malo</label>
+                        <label class="miniLetas" >Regular</label>
+                        <label class="miniLetas">Bueno</label>
+                        <label class="miniLetas-fijo">Muy Bueno</label>
+                        <label class="miniLetas">Excelente</label>
+                    </p>
+                </div>
+               
+            </div>
+            <button type="button" class="btn btn-primary" id="enviar">Sign in</button>
+        </form>
+    </div>
+
+
+    <script src="../external/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script src="../js/encuesta.js"></script>
 </body>
+
 </html>
