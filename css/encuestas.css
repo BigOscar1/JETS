@@ -1,0 +1,33 @@
+:root {
+    --color-titulos:rgba(207, 10, 44, 1);
+    --color-fondo: rgba(85, 87, 89, 1);
+    --color-cards: rgba(139, 141, 141, 1);
+    --separacion-nav: 1rem;
+    --separacion-margenes: 1rem;
+    --border-radius: 1rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-fondo);
+    /* background-image: url(../img/Arte\ 1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    background-image: url(../img/Fondo.jpg);
+    background-repeat: repeat-y;
+    background-size: 100% 100%;           
+}
+
+@media (max-width: 1024px) { 
+    body {
+        background-size: contain;
+    }
+}
+
