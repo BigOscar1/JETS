@@ -11,8 +11,8 @@ body{
 table{
     width: 100%;
     height: auto;
-    padding: 1%;  
     border-collapse: separate;
+    padding: 1%;
 }
 td{
     width: 24%;
@@ -37,8 +37,10 @@ tr{
 .temas{
     background-color: rgba(255, 255, 255, 0.884);
     color: rgb(0, 0, 0);
+    font-weight: 300;
 }
 .fechas{
+    font-weight: 700;
     background-color: rgb(0, 0, 0);
     border: 2px rgb(255, 255, 255) solid
 }

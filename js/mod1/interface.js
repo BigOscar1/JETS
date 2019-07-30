@@ -197,14 +197,14 @@ class Interface {
     credencialPdf(codigo, nom, tipo) {
         const qr = codigo.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
         const imgQr = create_qrcode(qr);
-        let doc = new jsPDF('')
+        let doc = new jsPDF('');
         let logo = new Image();
         let width = doc.internal.pageSize.getWidth();
         let height = doc.internal.pageSize.getHeight();
         logo.src = './img/credencial.png';
         doc.addImage(logo, 'PNG', ((width - 90) / 2), 50, 90, 130);
         console.log((width / 90) / 2);
-        doc.setFontSize(10)
+        doc.setFontSize(10);
         this.centrar(doc, tipo, 100);
         this.centrar(doc, nom, 145);
         doc.addImage(imgQr, 'PNG', 87.5, 105, 35, 35)
