@@ -4,7 +4,12 @@ class InterfaceC {
         this.idpro = idpro;
     }
 
+    getIdpro(){
+        return this.idpro;
+    }
+
     getProyect(qr){
+        let grupo = '';
         let url = cnxC.getUrl();
         url += `proyectoqr/${qr}`;
         cnxC.get(url)
@@ -13,10 +18,15 @@ class InterfaceC {
             const datos = res.proyecto;
             if(datos.length >  0){
                  const {proyecto,id} = datos[0];
+                 grupo = `<center><h4>GRUPO: ${proyecto}</h4></center>`;
+                 this.idpro = id;
                  console.log(proyecto,id);                 
             }else{
-               console.log('No Hay Datos');
+                grupo = `<h4>NO HAY DATOS</h4>`;
+                this.idpro = null;
+                console.log('No Hay Datos');
             }
+            nameGrup.innerHTML = grupo;
         })
         .catch(err => {
             console.log(err);
