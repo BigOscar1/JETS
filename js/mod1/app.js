@@ -12,10 +12,13 @@ const registrar = document.querySelector('#reg');
 const registroTotal = document.querySelector('#totalreg');
 const scan = document.querySelector('#scan');
 const credencial = document.querySelector('#credencial');
+const textoReg = document.querySelector('#txtRegistro');
+
+
 
 //funciones
 
-verificar.addEventListener('click', () => {
+verificar.addEventListener('click',() => {
     console.log(digito.value);
     const valor = digito.value;
     io.datosPersona(valor);

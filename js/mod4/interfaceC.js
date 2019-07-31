@@ -17,7 +17,8 @@ class InterfaceC {
             console.log(res);
             const datos = res.proyecto;
             if(datos.length >  0){
-                 const {proyecto,id} = datos[0];
+                 const {proyecto,id,calificaciones} = datos[0];
+                 console.log('cal',calificaciones.length);
                  grupo = `<center><h4>GRUPO: ${proyecto}</h4></center>`;
                  this.idpro = id;
                  console.log(proyecto,id);                 

@@ -30,6 +30,16 @@ class Interface {
         return this.tipo;
     }
 
+    ramdonNombre() {
+        const instancia = new Date();
+        let numero = instancia.getMilliseconds().toString();
+        for (let i = 0; i < 5; i++) {
+            numero += (Math.floor(Math.random() * (9 - 1)) + 1).toString();
+        }
+
+        return numero;
+    }
+
     datosPersona(digito) {
         // debugger
         let url = cnx.getUrl();
@@ -72,8 +82,11 @@ class Interface {
                     this.tipo = rol;
                     this.id = id;
                     this.estado = estado;
+                    this.contenidoText();
                 } else {
                     this.limpiar();
+                    this.contenidoText();
+
                     console.log('no existe la persona');
                 }
             })
@@ -183,8 +196,11 @@ class Interface {
                     this.tipo = rol;
                     this.id = id;
                     this.estado = estado;
+                    this.contenidoText();
                 } else {
                     this.limpiar();
+                    this.contenidoText();
+
                     console.log('no existe la persona');
                 }
             })
@@ -195,6 +211,7 @@ class Interface {
     }
 
     credencialPdf(codigo, nom, tipo) {
+        initLoader();
         const qr = codigo.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
         const imgQr = create_qrcode(qr);
         let doc = new jsPDF('');
@@ -207,8 +224,44 @@ class Interface {
         doc.setFontSize(10);
         this.centrar(doc, tipo, 100);
         this.centrar(doc, nom, 145);
-        doc.addImage(imgQr, 'PNG', 87.5, 105, 35, 35)
-        window.open(doc.output('bloburl'));
+        doc.addImage(imgQr, 'PNG', 87.5, 105, 35, 35);
+        console.log('aqui');
+        window.isphone = false;
+        if (document.URL.indexOf("http://") === -1 &&
+            document.URL.indexOf("https://") === -1) {
+            window.isphone = true;
+        }
+
+        if (window.isphone) {
+
+            let out = doc.output();
+            let url = "data:application/pdf;base64," + btoa(out);
+            // Split the base64 string in data and contentType
+            var block = url.split(";");
+            // Get the content type
+            var dataType = block[0].split(":")[1]; // In this case "application/pdf"
+            // get the real base64 content of the file
+            var realData = block[1].split(",")[1]; // In this case "JVBERi0xLjcKCjE...."
+
+            // The path where the file will be created
+            var folderpath = "file:///storage/emulated/0/Download";
+            // The name of the PDF
+            var filename = `Credencial${this.ramdonNombre()}.pdf`;
+            savebase64AsPDF(folderpath, filename, realData, dataType);
+            endLoader();
+            Swal.fire(
+                'Exito',
+                'Guardado En Descargas',
+                'success'
+            )
+            // document.addEventListener("deviceready", onDeviceReady, false);
+        } else {
+            // alert('navegador')
+            endLoader();
+            window.open(doc.output('bloburl'));
+        }
+
+        // window.open(doc.output('bloburl'));
 
     }
 
@@ -226,6 +279,15 @@ class Interface {
             }
         }
         return cadena;
+    }
+
+    contenidoText() {
+        const texto = this.getEstado();
+        if (texto === 'N' || texto === null) {
+            textoReg.textContent = 'Registrado: No';
+        } else {
+            textoReg.textContent = 'Registrado: Si';
+        }
     }
 
     limpiar() {
