@@ -72,5 +72,6 @@ input[type="radio"]:checked ~ label {
 .miniLetas-fijo {
     width: 2.5rem;
 } 
-
-
+#espacio{
+    opacity: 0;
+}
