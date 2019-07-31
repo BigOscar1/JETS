@@ -2884,7 +2884,6 @@ a.btn.disabled,
 fieldset:disabled a.btn {
     pointer-events: none
 }
-
 .btn-primary {
     color: #fff;
     background-color: #7460ee;
@@ -3044,45 +3043,44 @@ fieldset:disabled a.btn {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(34, 85, 164, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(34, 85, 164, 0.5)
 }
-
 .btn-warning {
     color: #212529;
-    background-color: #ffb848;
-    border-color: #ffb848
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1)
 }
 
 .btn-warning:hover {
     color: #212529;
-    background-color: #ffa922;
-    border-color: #ffa415
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1)
 }
 
 .btn-warning.focus,
 .btn-warning:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 184, 72, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(255, 184, 72, 0.5)
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(207, 10, 44, 1);
+    box-shadow: 0 0 0 0.2rem rgba(207, 10, 44, 1)
 }
 
 .btn-warning.disabled,
 .btn-warning:disabled {
     color: #212529;
-    background-color: #ffb848;
-    border-color: #ffb848
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1)
 }
 
 .btn-warning:not(:disabled):not(.disabled).active,
 .btn-warning:not(:disabled):not(.disabled):active,
 .show>.btn-warning.dropdown-toggle {
     color: #212529;
-    background-color: #ffa415;
-    border-color: #ff9f08
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1)
 }
 
 .btn-warning:not(:disabled):not(.disabled).active:focus,
 .btn-warning:not(:disabled):not(.disabled):active:focus,
 .show>.btn-warning.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 184, 72, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(255, 184, 72, 0.5)
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(207, 10, 44, 1);
+    box-shadow: 0 0 0 0.2rem rgba(207, 10, 44, 1)
 }
 
 .btn-danger {
@@ -3639,7 +3637,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
-.btn-outline-dark:not(:disabled):not(.disabled):active:focus,
+.-outline-dark:not(:disabled):not(.disabled):active:focus,
 .show>.btn-outline-dark.dropdown-toggle:focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5)
@@ -6585,7 +6583,7 @@ button.close {
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color:#000;
+    background-color:rgba(139, 141, 141, 1);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 2px;
@@ -6641,9 +6639,9 @@ button.close {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1rem
+    padding: 1rem;
+    color: #fff;
 }
-
 .modal-footer {
     display: -webkit-box;
     display: -ms-flexbox;

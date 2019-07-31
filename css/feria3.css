@@ -61,7 +61,7 @@
 
 .btn:active {
     box-shadow:none;
-    
+    background-color: rgba(207, 10, 44, 1);
 }
 
 .btnlista-4 {
@@ -137,6 +137,8 @@
     width: 100%;
     border-radius: 5px;
     font-size: .8rem;
+    background-color: rgba(207, 10, 44, 1);
+    border-color: rgba(207, 10, 44, 1);
 }
 
 .modal-titulo {
@@ -144,7 +146,7 @@
     justify-content: center;    
     font-size: 1.2rem;
     font-weight: 600;
-    color: hsla(10, 100%, 50%, .8);
+    color: rgba(0, 0, 0, 0.8);
     margin-bottom: 0.4rem;
 }
 
@@ -152,7 +154,7 @@
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    color: hsla(230, 100%, 50%, 1);
+    color: rgb(255, 255, 255);
     margin-bottom: 1.5rem;
 }
 
@@ -217,3 +219,18 @@
     display: flex;
     justify-content: center;
 }
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  .rating > span {
+    height: 100px;
+    display: inline-block;
+    position: center;
+    width: 2rem;
+  }
+  .rating > span:hover:before,
+  .rating > span:hover ~ span:before {
+     content: "\2605";
+     position: absolute;
+  } 
