@@ -40,6 +40,40 @@ class InterfaceM {
         })
     }
 
+    personQr(qr){
+        let url = cnxM.getUrl();
+        url += `persona-matQr/${qr}`;
+        cnxM.get(url)
+        .then(res => {
+            console.log(res);
+            const datos = res.persona;
+            console.log(datos.length);
+            if(datos.length > 0){
+                bool = false;
+                const {nombres,apaterno,amaterno,ci,registro,materiales} = datos[0];
+                this.reg = registro;
+                console.log(nombres,apaterno,amaterno,ci,registro);
+                console.log(materiales.length);
+                // debugger
+                (materiales.length > 0) ? (fecEntregadas = materiales): (fecEntregadas = 'No Hay Datos')
+                const campos = document.querySelectorAll('#datosM .form-control');
+                campos[0].value = nombres;
+                campos[1].value = apaterno;
+                campos[2].value = amaterno;
+                campos[3].value = ci;                
+            }else{
+                console.log('no hay datos');
+                this.limpiar();
+                fecEntregadas = 'No Hay Datos';
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+
+
     entregaMat(rg){
         let url = cnxM.getUrl();
         url += 'material'
@@ -56,6 +90,19 @@ class InterfaceM {
         .catch(err => {
             console.log(err);
         })
+    }
+
+    scan() {
+        cordova.plugins.barcodeScanner.scan(this.succes, this.error);
+    }
+
+    succes(result) {
+        // document.getElementById('digitos').value = result.text;
+         qrTextM(result.text);
+    }
+
+    error(err) {
+        alert("Scanning failed: " + err);
     }
 
     limpiar() {

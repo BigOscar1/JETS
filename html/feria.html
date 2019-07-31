@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -361,6 +362,300 @@
 
   <script src="./js/mod3/interfaceM.js"></script>
   <script src="./js/mod3/appM.js"></script>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JETS</title>
+    <!-- External -->
+    <link rel="stylesheet" href="../external/css/gijgo.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../external/css/bootstrap-reboot.min.css">
+
+    <!-- JETS -->
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/feria.css">
+    <link rel="stylesheet" href="../css/feria3.css">
+    <!-- <link rel="stylesheet" href="./css/cronograma.css"> -->
+    <!-- Jquery -->
+    <script src="../external/js/jquery-3.4.1.min.js"></script>
+    <!-- jspdf nesesario -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.0.2/base64.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.1.2/sprintf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">FERIA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../index.html"">Inicio <span class=" sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Speaker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Calificaciones</h4>
+                    <div class="ml-auto text-right">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="form-group row">
+                <div class="col-sm-4 text-center ">
+
+                    <div data-role="main" class="ui-content ">
+
+                        <p>
+                            <a style="text-decoration: none" id="scan"><button
+                                    class="btn btn-warning btn-lg btn-flex-medio">Scan</button></a>
+                        </p>
+
+                    </div>
+                </div>
+
+                <div id="contenido" style="display: block;">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row" id="grupoName">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#presentacion">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">PRESENTACION</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#planteamiento">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">PLANTEAMIENTO</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#desarrollo">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">DESARROLLO DEL PROYECTO E INTEGRIDAD</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#profundidad">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">PROFUNDIDAD</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-12 col-xlg-12">
+                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
+                                    data-target="#merito">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">MERITO TECNICO E INNOVACION</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="desarrollo" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">DESARROLLO DEL PROYECTO E INTEGRIDAD
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-titulo">
+                                Criterio
+                            </div>
+                            <div class="modal-texto">
+                                El producto fue desarrollado en forma completa
+                            </div>
+                            <form>
+                                <p class="clasificacion">
+                                    <input id="radio1" type="radio" name="desarrollo" value="25">
+                                    <label class="separacion" for="radio1">★</label>
+                                    <input id="radio2" type="radio" name="desarrollo" value="20">
+                                    <label class="separacion" for="radio2">★</label>
+                                    <input id="radio3" type="radio" name="desarrollo" value="15">
+                                    <label class="separacion" for="radio3">★</label>
+                                    <input id="radio4" type="radio" name="desarrollo" value="10">
+                                    <label class="separacion" for="radio4">★</label>
+                                    <input id="radio5" type="radio" name="desarrollo" value="5">
+                                    <label class="separacion" for="radio5">★</label>
+                                </p>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" id="desarrollo" class="btn btn-warning btn-lg btn-flex-medio"
+                                    data-dismiss="modal">Calificar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="profundidad" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">PROFUNDIDAD</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-titulo">
+                                Criterio
+                            </div>
+                            <div class="modal-texto">
+                                El proyecto aplica el contenido de la materia
+                            </div>
+                            <form>
+                                <p class="clasificacion">
+                                    <input id="radio1" type="radio" name="profundida" value="25">
+                                    <label class="separacion" for="radio1">★</label>
+                                    <input id="radio2" type="radio" name="profundida" value="20">
+                                    <label class="separacion" for="radio2">★</label>
+                                    <input id="radio3" type="radio" name="profundida" value="15">
+                                    <label class="separacion" for="radio3">★</label>
+                                    <input id="radio4" type="radio" name="profundida" value="10">
+                                    <label class="separacion" for="radio4">★</label>
+                                    <input id="radio5" type="radio" name="profundida" value="5">
+                                    <label class="separacion" for="radio5">★</label>
+                                </p>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" id="profundidad" class="btn btn-warning btn-lg btn-flex-medio"
+                                    data-dismiss="modal">Calificar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="merito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">MERITO TECNICO E INNOVACION</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-titulo">
+                                Criterio
+                            </div>
+                            <div class="modal-texto">
+                                El proyecto presenta alguna tecnica o tecnologia extraordinaria y/o novedosa
+                            </div>
+                            <form>
+                                <p class="clasificacion">
+                                    <input id="radio1" type="radio" name="merito" value="10">
+                                    <label class="separacion" for="radio1">★</label>
+                                    <input id="radio2" type="radio" name="merito" value="8">
+                                    <label class="separacion" for="radio2">★</label>
+                                    <input id="radio3" type="radio" name="merito" value="6">
+                                    <label class="separacion" for="radio3">★</label>
+                                    <input id="radio4" type="radio" name="merito" value="4">
+                                    <label class="separacion" for="radio4">★</label>
+                                    <input id="radio5" type="radio" name="merito" value="2">
+                                    <label class="separacion" for="radio5">★</label>
+                                </p>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" id="merito" class="btn btn-warning btn-lg btn-flex-medio"
+                                    data-dismiss="modal">Calificar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <script src="../external/js/bootstrap.bundle.min.js"></script>
+    <script src="../external/js/gijgo.min.js"></script>
+    <script src="../external/js/sweetalert2@8.js"></script>
+    <!-- Principal -->
+    <script type="text/javascript" src="../cordova.js"></script>
+
+    <!-- <script src="./js/mod3/interfaceM.js"></script>
+    <script src="./js/mod3/appM.js"></script> -->
+
+    <script src="../js/conexion/conexion.js"></script>
+    <script src="../js/mod4/interfaceC.js"></script>
+    <script src="../js/mod4/appC.js"></script>
+
+>>>>>>> d859188d980c1ba5c773ed0f329af7dc5a2f2573
 
 
 

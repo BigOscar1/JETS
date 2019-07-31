@@ -8,6 +8,7 @@ const verificarM = document.querySelector('#verificarM');
 const digitoM = document.querySelector('#digitosM');
 const entregas = document.querySelector('#Entregas');
 const regMat = document.querySelector('#regM');
+const btnScanM = document.querySelector('#scanM');
 
 let fecEntregadas = 'No Hay Datos';
 let bool = true;
@@ -61,3 +62,11 @@ regMat.addEventListener('click', () => {
   else
     alert('No Valido');
 });
+
+btnScanM.addEventListener('click',() => { 
+    ioM.scan();
+});
+
+function qrTextM(result){
+  ioM.personQr(result);
+}
