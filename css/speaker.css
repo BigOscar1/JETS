@@ -66,18 +66,7 @@ header {
     flex-direction: column;
 }
 
-.titulo {
 
-}
-
-.subTitulo {
-
-
-}
-
-.contenido {
-    
-}
 .card-flex{
     display: flex;
     align-items: center;
@@ -103,6 +92,7 @@ header {
     top: 2px;
     left: 2px;
 }
+
 .boton{
     display: inline-block;
     margin-left: 1rem;
