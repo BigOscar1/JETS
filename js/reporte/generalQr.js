@@ -237,8 +237,44 @@ const generarPdf = () => {
         imgY = 50;
 
     }
-    window.open(doc.output('bloburl'));
-    fin();
+
+    console.log('aqui');
+    window.isphone = false;
+    if (document.URL.indexOf("http://") === -1 &&
+        document.URL.indexOf("https://") === -1) {
+        window.isphone = true;
+    }
+
+    if (window.isphone) {
+
+        let out = doc.output();
+        let url = "data:application/pdf;base64," + btoa(out);
+        // Split the base64 string in data and contentType
+        var block = url.split(";");
+        // Get the content type
+        var dataType = block[0].split(":")[1]; // In this case "application/pdf"
+        // get the real base64 content of the file
+        var realData = block[1].split(",")[1]; // In this case "JVBERi0xLjcKCjE...."
+
+        // The path where the file will be created
+        var folderpath = "file:///storage/emulated/0/Download";
+        // The name of the PDF
+        var filename = `QrGeneral${ramdonName()}.pdf`;
+        savebase64AsPDF(folderpath, filename, realData, dataType);
+        fin();
+        Swal.fire(
+            'Exito',
+            'Guardado En Descargas',
+            'success'
+        )
+        // document.addEventListener("deviceready", onDeviceReady, false);
+    } else {
+        // alert('navegador')
+        fin();
+        window.open(doc.output('bloburl'));
+    }
+    // window.open(doc.output('bloburl'));
+    // fin();
 
 }
 
@@ -260,6 +296,18 @@ function fin(){
     $(".loader-page").css({visibility:"hidden",opacity:"0"})
 
 }
+
+const ramdonName = () => {
+    const instancia = new Date();
+    let numero = instancia.getMilliseconds().toString();
+    for (let i = 0; i < 5; i++) {
+        numero += (Math.floor(Math.random() * (9 - 1)) + 1).toString();
+    }
+
+    return numero;
+}
+
+
 
 // var doc = new jsPDF()
 
