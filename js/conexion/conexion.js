@@ -6,7 +6,6 @@ class Conexion{
         return area;
     }
 
-
     async post(json, url) {
         const  item =  await JSON.stringify(json);
         console.log(item);
@@ -46,7 +45,7 @@ class Conexion{
 
 
     getUrl() {
-        return `http://192.168.43.205:9000/api/`;
+        return `http://192.168.0.168:9000/api/`;
     }
     // http://190.186.43.205/api/
     
