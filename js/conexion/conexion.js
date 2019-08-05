@@ -21,8 +21,23 @@ class Conexion{
         const data = res.json();
         console.log({data})
         return data;
-      
 
+    }
+
+    async postToken(json, url) {
+        console.log(json);
+        console.log(url);
+        
+        const res = await fetch(url, {
+            method: 'POST',
+            body: json,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+        const data = res.json();
+        console.log({data})
+        return data;
     }
 
     async put(json, url) {
