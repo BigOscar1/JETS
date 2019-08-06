@@ -24,6 +24,8 @@ class Conexion{
 
     }
 
+   
+
     async postToken(json, url) {
         console.log(json);
         console.log(url);
@@ -60,7 +62,7 @@ class Conexion{
 
 
     getUrl() {
-        return `http://192.168.0.168:9000/api/`;
+        return `http://10.0.0.10:9000/api/`;
     }
     // http://190.186.43.205/api/
     
