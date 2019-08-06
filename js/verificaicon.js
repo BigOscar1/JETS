@@ -22,8 +22,8 @@ function enviarDatos(e) {
     
     conexion.postToken(data,url)
     .then(res => {
+        console.log(res);
         token = res.token
-        console.log(token)
     })
     .then(() => {
         let datosToken = parseJwt(token)
