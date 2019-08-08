@@ -62,7 +62,11 @@ class Conexion{
 
 
     getUrl() {
+<<<<<<< HEAD
         return `http://192.168.43.205:9000/api/`;
+=======
+        return `http://localhost:9000/api/`;
+>>>>>>> 302a31bc49f775df4b00d77794f9cc3cb6164a0c
     }
     // http://190.186.43.205/api/
     
