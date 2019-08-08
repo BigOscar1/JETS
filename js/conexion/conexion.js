@@ -24,6 +24,8 @@ class Conexion{
 
     }
 
+   
+
     async postToken(json, url) {
         console.log(json);
         console.log(url);
