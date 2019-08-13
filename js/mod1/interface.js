@@ -86,6 +86,7 @@ class Interface {
                 } else {
                     this.limpiar();
                     this.contenidoText();
+                    this.mensaje();
 
                     console.log('no existe la persona');
                 }
@@ -200,6 +201,7 @@ class Interface {
                 } else {
                     this.limpiar();
                     this.contenidoText();
+                    this.mensaje();
 
                     console.log('no existe la persona');
                 }
@@ -300,6 +302,13 @@ class Interface {
         this.qr = null;
         this.nombre = null;
         this.tipo = null;
+    }
+
+    mensaje(){
+        const campos = document.querySelectorAll('#datos .form-control');
+        for (let i = 0; i < campos.length; i++) {
+            campos[i].value = 'No Existe';
+        }
     }
 }
 

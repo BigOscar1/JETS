@@ -9,6 +9,11 @@ const digitoM = document.querySelector('#digitosM');
 const entregas = document.querySelector('#Entregas');
 const regMat = document.querySelector('#regM');
 const btnScanM = document.querySelector('#scanM');
+const concepto = document.querySelector('#conceptos');
+const cancelM = document.querySelector('#cancelM');
+const closeM = document.querySelector('#closeM');
+const talla = document.querySelector('#talla');
+
 
 let fecEntregadas = 'No Hay Datos';
 let bool = true;
@@ -30,7 +35,10 @@ entregas.addEventListener('click', () => {
     let fec = '';
     if (fecEntregadas !== 'No Hay Datos') {
       for (let i = 0; i < fecEntregadas.length; i++) {
-        fec += `<li>Fecha Entregada: ${fecEntregadas[i].createdAt}</li>`;
+        fec += `<li>Fecha Entregada: ${fecEntregadas[i].createdAt}
+                <ul>
+                ${fecEntregadas[i].material}
+                </ul></li>`;
       }
       console.log(fec);
       fecEntregadas = fec;
@@ -56,9 +64,17 @@ entregas.addEventListener('click', () => {
 
 regMat.addEventListener('click', () => {
   // debugger;
+  const material = concepto.value;
+  const tl = talla.value; 
   const reg = ioM.getReg();
   if ((reg !== null) && (reg !== undefined))
-    ioM.entregaMat(reg);
+    if(material !== '')
+      if(tl !== '')
+      ioM.entregaMat(reg,material,tl);
+      else 
+      alert('Seleccione la talla');
+    else
+    alert('Seleccione la entrega');
   else
     alert('No Valido');
 });
@@ -66,6 +82,16 @@ regMat.addEventListener('click', () => {
 btnScanM.addEventListener('click',() => { 
     ioM.scan();
 });
+
+cancelM.addEventListener('click',()=>{
+  ioM.limpiar();
+  digitoM.value = '';
+});
+
+closeM.addEventListener('click',()=>{
+  ioM.limpiar();
+  digitoM.value = '';
+})
 
 function qrTextM(result){
   ioM.personQr(result);
