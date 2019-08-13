@@ -43,6 +43,12 @@ function enviarDatos(e) {
     })
     .catch(err => {
         console.log(err);
+ 
+        Swal.fire({
+            type: 'error',
+            title: 'Contraseña Incorrecta',
+            confirmButtonText: 'Volver a Intentarlo',
+          })        
     })
 }
 
