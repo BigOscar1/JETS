@@ -100,61 +100,34 @@
                     <hr>
                     <div class="container" id="rubrica" style="display: block;">
                         <div class="row">
-                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
-                                    data-target="#presentacion">
-                                    <div class="card-body">
-                                        <div class="car-flex">
-                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
-                                        </div>
-                                        <p class="card-text car-flex">PRESENTACION</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
-                                    data-target="#planteamiento">
-                                    <div class="card-body">
-                                        <div class="car-flex">
-                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
-                                        </div>
-                                        <p class="card-text car-flex">PLANTEAMIENTO</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
-                                    data-target="#desarrollo">
-                                    <div class="card-body">
-                                        <div class="car-flex">
-                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
-                                        </div>
-                                        <p class="card-text car-flex">DESARROLLO DEL PROYECTO E INTEGRIDAD</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-6 col-xlg-6">
-                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
-                                    data-target="#profundidad">
-                                    <div class="card-body">
-                                        <span id="espacio" aria-hidden="true">&times;</span>
-                                        <div class="car-flex">
-                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
-                                        </div>
-                                        <p class="card-text car-flex">PROFUNDIDAD</p>
-                                    </div>
-                                    <span id="espacio" aria-hidden="true">&times;</span>
-                                </div>
-                                <span id="espacio" aria-hidden="true">&times;</span>
-                            </div>
                             <div class="col-12 col-md-12 col-lg-12 col-xlg-12">
-                                <div class="card text-white bg-secondary card-button reg" data-toggle="modal"
-                                    data-target="#merito">
+                                <div class="card text-white bg-secondary card-button reg" id="propuesta">
                                     <div class="card-body">
                                         <div class="car-flex">
                                             <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
                                         </div>
-                                        <p class="card-text car-flex">MERITO TECNICO E INNOVACION</p>
+                                        <p class="card-text car-flex">PROPUESTA</p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-12 col-md-12 col-lg-12 col-xlg-12">
+                                <div class="card text-white bg-secondary card-button reg" id="emprendimiento">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">EMPRENDIMIENTO</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md-12 col-lg-12 col-xlg-12">
+                                <div class="card text-white bg-secondary card-button reg" id="presentacion">
+                                    <div class="card-body">
+                                        <div class="car-flex">
+                                            <img class="icon" src="../external/icons/register.png" alt="" srcset=""></a>
+                                        </div>
+                                        <p class="card-text car-flex">PRESENTACIÓN</p>
                                     </div>
                                 </div>
                             </div>
@@ -176,254 +149,13 @@
             </div>
             <!-- <button>Guardar</button> -->
 
-            <div class="modal fade" id="desarrollo" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">DESARROLLO DEL PROYECTO E INTEGRIDAD
-                            </h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-titulo">
-                                Criterio
-                            </div>
-                            <div class="modal-texto">
-                                El producto fue desarrollado en forma completa
-                            </div>
-                            <fieldset >
-                                <p class="clasificacion">
-                                    <input id="radio1" type="radio" name="estrellas" value="5">
-                                    <!--
-                                    --><label class="estre" for="radio1">★</label>
-                                    <!--
-                                    --><input id="radio2" type="radio" name="estrellas" value="4">
-                                    <!--
-                                    --><label class="estre" for="radio2">★</label>
-                                    <!--
-                                    --><input id="radio3" type="radio" name="estrellas" value="3">
-                                    <!--
-                                    --><label class="estre" for="radio3">★</label>
-                                    <!- --><input id="radio4" type="radio" name="estrellas" value="2">
-                                        <!--
-                                    --><label class="estre" for="radio4">★</label>
-                                        <!--
-                                    --><input id="radio5" type="radio" name="estrellas" value="1">
-                                        <!--
-                                    --><label class="estre" for="radio5">★</label>
-                                </p>
-                            </fieldset>
-                            <div class="modal-footer">
-                                <button type="button" id="desarrollo" class="btn btn-warning btn-lg btn-flex-medio"
-                                    data-dismiss="modal">Calificar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="profundidad" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">PROFUNDIDAD</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-titulo">
-                                Criterio
-                            </div>
-                            <div class="modal-texto">
-                                El proyecto aplica el contenido de la materia
-                            </div>
-                            <fieldset>
-                                <p class="clasificacion">
-                                        <input id="radio6" type="radio" name="estrellas1" value="5">
-                                        <!--
-                                        --><label class="estre" for="radio6">★</label>
-                                        <!--
-                                        --><input id="radio7" type="radio" name="estrellas1" value="4">
-                                        <!--
-                                        --><label class="estre" for="radio7">★</label>
-                                        <!--
-                                        --><input id="radio8" type="radio" name="estrellas1" value="3">
-                                        <!--
-                                        --><label class="estre" for="radio8">★</label>
-                                        <!- --><input id="radio9" type="radio" name="estrellas1" value="2">
-                                            <!--
-                                        --><label class="estre" for="radio9">★</label>
-                                            <!--
-                                        --><input id="radio10" type="radio" name="estrellas1" value="1">
-                                            <!--
-                                        --><label class="estre" for="radio10">★</label>
-                                </p>
-                              </fieldset>
-                            <div class="modal-footer">
-                                <button type="button" id="profundidad" class="btn btn-warning btn-lg btn-flex-medio"
-                                    data-dismiss="modal">Calificar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="merito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">MERITO TECNICO E INNOVACION</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-titulo">
-                                Criterio
-                            </div>
-                            <div class="modal-texto">
-                                El proyecto presenta alguna tecnica o tecnologia extraordinaria y/o novedosa
-                            </div>
-                            <fieldset>
-                                <p class="clasificacion">
-                                        <input id="radio11" type="radio" name="estrellas2" value="5">
-                                        <!--
-                                        --><label class="estre" for="radio11">★</label>
-                                        <!--
-                                        --><input id="radio12" type="radio" name="estrellas2" value="4">
-                                        <!--
-                                        --><label class="estre" for="radio12">★</label>
-                                        <!--
-                                        --><input id="radio13" type="radio" name="estrellas2" value="3">
-                                        <!--
-                                        --><label class="estre" for="radio13">★</label>
-                                        <!- --><input id="radio14" type="radio" name="estrellas2" value="2">
-                                            <!--
-                                        --><label class="estre" for="radio14">★</label>
-                                            <!--
-                                        --><input id="radio15" type="radio" name="estrellas2" value="1">
-                                            <!--
-                                        --><label class="estre" for="radio15">★</label>
-                                </p>
-                            </fieldset>
-                            <div class="modal-footer">
-                                <button type="button" id="merito" class="btn btn-warning btn-lg btn-flex-medio"
-                                    data-dismiss="modal">Calificar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="modal fade" id="presentacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">PRESENTACION</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-titulo">
-                            Criterio
-                        </div>
-                        <div class="modal-texto">
-                            La imagen, pulcritud y formalidad de la presentacion fue ideal
-                        </div>
-                        <fieldset>
-                            <p class="clasificacion">
-                                    <input id="radio16" type="radio" name="estrellas3" value="5">
-                                    <!--
-                                    --><label class="estre" for="radio16">★</label>
-                                    <!--
-                                    --><input id="radio17" type="radio" name="estrellas3" value="4">
-                                    <!--
-                                    --><label class="estre" for="radio17">★</label>
-                                    <!--
-                                    --><input id="radio18" type="radio" name="estrellas3" value="3">
-                                    <!--
-                                    --><label class="estre" for="radio18">★</label>
-                                    <!- --><input id="radio19" type="radio" name="estrellas3" value="2">
-                                        <!--
-                                    --><label class="estre" for="radio19">★</label>
-                                        <!--
-                                    --><input id="radio20" type="radio" name="estrellas3" value="1">
-                                        <!--
-                                    --><label class="estre" for="radio20">★</label>
-                            </p>
-                        </fieldset>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-warning btn-lg btn-flex-medio"
-                                 id="presentacion" data-dismiss="modal">Calificar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="planteamiento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">PLANTEAMINETO</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-titulo">
-                        Criterio
-                    </div>
-                    <div class="modal-texto">
-                        La Forma de exposicion fue clara y precisa
-                    </div>
-                    <fieldset>
-                        <p class="clasificacion">
-                                <input id="radio21" type="radio" name="estrellas4" value="5">
-                                <!--
-                                --><label class="estre" for="radio21">★</label>
-                                <!--
-                                --><input id="radio22" type="radio" name="estrellas4" value="4">
-                                <!--
-                                --><label class="estre" for="radi022">★</label>
-                                <!--
-                                --><input id="radio23" type="radio" name="estrellas4" value="3">
-                                <!--
-                                --><label class="estre" for="radio23">★</label>
-                                <!-- --><input id="radio24" type="radio" name="estrellas4" value="2">
-                                    <!--
-                                --><label class="estre" for="radio24">★</label>
-                                    <!--
-                                --><input id="radio25" type="radio" name="estrellas4" value="1">
-                                    <!--
-                                --><label class="estre" for="radio25">★</label>
-                        </p>
-                    </fieldset>
-                    <div class="modal-footer">
-                        <button type="button" id="planteamiento" class="btn btn-warning btn-lg btn-flex-medio"
-                            data-dismiss="modal">Calificar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     </main>
     <script src="../external/js/bootstrap.bundle.min.js"></script>
     <script src="../external/js/gijgo.min.js"></script>
     <script src="../external/js/sweetalert2@8.js"></script>
     <!-- Principal -->
     <script type="text/javascript" src="../cordova.js"></script>
+    <script src="../js/index.js"></script>
     <script src="../js/encuesta.js"></script>
 
     <!-- <script src="./js/mod3/interfaceM.js"></script>
@@ -432,10 +164,6 @@
     <script src="../js/conexion/conexion.js"></script>
     <script src="../js/mod4/interfaceC.js"></script>
     <script src="../js/mod4/appC.js"></script>
-  
-
-
-
 
 </body>
 

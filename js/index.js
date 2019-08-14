@@ -21,6 +21,16 @@ $("#reportes").click(function () {
   location.href = "html/reportes.html";
 });
 
+$("#propuesta").click(function () {
+  location.href = "../html/feria1.html";
+});
+$("#emprendimiento").click(function () {
+  location.href = "../html/feria2.html";
+});
+$("#presentacion").click(function () {
+  location.href = "../html/feria3.html";
+});
+
 $("#tipo").click(function () {
   const usuario = $("#tipoUsuario");
   let tipo = $("#tipo").val()
