@@ -62,8 +62,9 @@ const programacion = () => {
                         }
                     } = matProg[i].persona
                     // console.log(nombres, apaterno, amaterno, registro, 'qr', codigoQr);
-                    if (grupo !== grupoV && iddoc !== iddocV && idmat !== idmatV &&
-                        idaula !== idaulaV && ((idtur === idturV) || (idtur !== idturV))) {
+                    // debugger;
+                    if ( idmat != idmatV ||
+                         idtur != idturV && grupo != grupoV) {
                         if (bool) {
                             json.personas = persona
                             materias.push(json);
@@ -162,7 +163,9 @@ const generarPdf = () => {
     let doc = jsPDF('l', 'mm', 'A4');
     for (let i = 0; i < materias.length; i++) {
         // debugger
-        const nombres = quitarEspacio(materias[i].docenteJ);
+        const n = materias[i].docenteJ.split(' ');
+        const nombres = formato(n);
+        // const nombres = quitarEspacio(materias[i].docenteJ);
         const apellidoP = quitarEspacio(materias[i].apellidoP);
         const docente = `${nombres} ${apellidoP}`;
         const aula = materias[i].aulaJ;
@@ -184,7 +187,7 @@ const generarPdf = () => {
         doc.text(x, (y + 10), `MATERIA: ${materia}`)
         doc.text(x, (y + 20), `INSCRITOS: ${inscritos}`)
         let splitTitle = doc.splitTextToSize('Al firmar este documento, me comprometo a participar de las "Jornadas Empresariales Tecnológicas y Sociales - JETS 2019", a desarrollarse en el módulo 1 (del 19 al   23 de agosto), por lo tanto, AUTORIZO que se asigne a mi cuenta de la Universidad la suma de Bs. 150.-  por este concepto.', 140);
-        doc.text(125, (y + 10), splitTitle)
+        doc.text(55, 30, splitTitle)
         doc.text(15, 55, 'OBSERVACIONES')
         doc.text(64, 55, 'REGISTRO')
         doc.text(95, 55, 'A.PATERNO')
@@ -316,6 +319,25 @@ const ramdonName = () => {
 
     return numero;
 }
+
+const formatoG = (x) => {
+    const [uno = '', dos = '', tres = '', cuatro = '', cinco = ''] = x;
+    console.log(uno, dos, tres, cuatro, cinco);
+    let nombres = '';
+    if (uno !== '')
+        nombres += uno
+    if (dos !== '')
+        nombres += ` ${dos}`
+    if (tres !== '')
+        nombres += ` ${tres}`;
+    if (cuatro !== '')
+        nombres += ` ${cuatro}`;
+    if (cinco !== '')
+        nombres += ` ${cinco}`;
+
+    return nombres;
+}
+
 
 
 
