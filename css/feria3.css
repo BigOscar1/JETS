@@ -224,7 +224,6 @@
     direction: rtl;
   }
   .rating > span {
-    height: 100px;
     display: inline-block;
     position: center;
     width: 2rem;
@@ -234,3 +233,6 @@
      content: "\2605";
      position: absolute;
   } 
+  #guardar{
+      margin-top: 0;
+  }
