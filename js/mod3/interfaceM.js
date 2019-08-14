@@ -33,6 +33,7 @@ class InterfaceM {
                 console.log('no hay datos');
                 this.limpiar();
                 fecEntregadas = 'No Hay Datos';
+                this.mensaje();
             }
         })
         .catch(err => {
@@ -65,6 +66,7 @@ class InterfaceM {
                 console.log('no hay datos');
                 this.limpiar();
                 fecEntregadas = 'No Hay Datos';
+                this.mensaje();
             }
         })
         .catch(err => {
@@ -74,21 +76,25 @@ class InterfaceM {
 
 
 
-    entregaMat(rg){
+    entregaMat(rg,mat,tl){
         let url = cnxM.getUrl();
         url += 'material'
         let json = {
-            material:'Polera y accesorios',
+            material:mat,
             estado:'E',
-            reg:rg
+            reg:rg,
+            talla:tl
         }
         cnxM.post(json,url)
         .then(res => {
             console.log(res);
             this.limpiar();
+            alert('exito');
         })
         .catch(err => {
             console.log(err);
+            alert('Fallo');
+
         })
     }
 
@@ -109,8 +115,17 @@ class InterfaceM {
         const campos = document.querySelectorAll('#datosM .form-control');
         for (let i = 0; i < campos.length; i++) {
             campos[i].value = '';
-        }  
+        }
+        concepto.value = '';
+        talla.value = '';
         this.reg = null; 
+    }
+
+    mensaje(){
+        const campos = document.querySelectorAll('#datosM .form-control');
+        for (let i = 0; i < campos.length; i++) {
+            campos[i].value = 'NO INSCRITO';
+        }
     }
 }
 

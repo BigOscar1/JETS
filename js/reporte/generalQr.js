@@ -17,10 +17,10 @@ let grupoV,
     materias = [],
     bool = false;
 let x = 15;
-let y = 25;
+let y = 15;
 let aux;
-let contY = 60;
-let imgY = 50;
+let contY = 65;
+let imgY = 60;
 
 const btnReport = document.querySelector('#generarRepor');
 
@@ -159,8 +159,9 @@ const quitarEspacio = (str) => {
 };
 
 const generarPdf = () => {
-    let doc = new jsPDF()
+    let doc = jsPDF('l', 'mm', 'A4');
     for (let i = 0; i < materias.length; i++) {
+        // debugger
         const nombres = quitarEspacio(materias[i].docenteJ);
         const apellidoP = quitarEspacio(materias[i].apellidoP);
         const docente = `${nombres} ${apellidoP}`;
@@ -174,19 +175,24 @@ const generarPdf = () => {
         const modulo = materias[i].idmodJ;
         console.log('docente:', docente, 'aula', aula, 'grupo', grupo, 'inscritos', inscritos, 'materia', materia, 'semestre', semestre, 'sigla', sigla, 'turno', turno);
         doc.setFontSize(10)
-        doc.text(x, y, `GRUPO:${grupo}`)
-        doc.text(55, y, `MATERIA:${materia}`)
-        doc.text(165, y, `AULA:${aula}`)
-        doc.text(x, 35, `TURNO:${turno}`)
-        doc.text(55, 35, `SEMESTRE:${semestre}`)
-        doc.text(95, 35, `DOCENTE:${docente}`)
-        doc.text(165, 35, `MODULO:${modulo}`)
-        doc.text(15, 45, 'OBSERVACIONES')
-        doc.text(55, 45, 'A.PATERNO')
-        doc.text(85, 45, 'A.MATERNO')
-        doc.text(115, 45, 'NOMBRES')
-        doc.text(145, 45, 'FIRMA')
-        doc.text(165, 45, 'QR')
+        doc.text(x, y, `GRUPO: ${grupo}`)
+        doc.text(55, y, `MODULO: ${modulo}`)
+        doc.text(95, y, `AULA: ${aula}`)
+        doc.text(135, y, `TURNO: ${turno}`)
+        doc.text(165, y, `SEMESTRE: ${semestre}`)
+        doc.text(215, y, `DOCENTE: ${docente}`)
+        doc.text(x, (y + 10), `MATERIA: ${materia}`)
+        doc.text(x, (y + 20), `INSCRITOS: ${inscritos}`)
+        let splitTitle = doc.splitTextToSize('Al firmar este documento, me comprometo a participar de las "Jornadas Empresariales Tecnológicas y Sociales - JETS 2019", a desarrollarse en el módulo 1 (del 19 al   23 de agosto), por lo tanto, AUTORIZO que se asigne a mi cuenta de la Universidad la suma de Bs. 150.-  por este concepto.', 140);
+        doc.text(125, (y + 10), splitTitle)
+        doc.text(15, 55, 'OBSERVACIONES')
+        doc.text(64, 55, 'REGISTRO')
+        doc.text(95, 55, 'A.PATERNO')
+        doc.text(125, 55, 'A.MATERNO')
+        doc.text(155, 55, 'NOMBRES')
+        doc.text(195, 55, 'FIRMA')
+        doc.text(220, 55, 'TALLA')
+        doc.text(245, 55, 'QR')
         for (let x = 0; x < materias[i].personas.length; x++) {
             // debugger;
             const persona = materias[i].personas[x];
@@ -199,28 +205,32 @@ const generarPdf = () => {
             const imgQr = create_qrcode(qr);
             console.log('estudiante', estudiante, 'apellidop', estudianteAp, 'apellidom', 
                         estudianteAm, 'registro', registro, 'observacion', observacion,'qr',qr);
-            if(contY >= 270){
+            if(contY >= 190){
                 doc.addPage();
                 contY = 20;
-                imgY = 6;
+                imgY = 8;
                 doc.setFontSize(8.5)
                 doc.text(15, contY, observacion)
-                doc.text(55, contY, estudianteAp)
-                doc.text(85, contY, estudianteAm)
-                doc.text(115, contY, estudiante)
-                doc.text(145, contY, '.............')
-                doc.addImage(imgQr, 'PNG', 165, imgY, 12, 12)
+                doc.text(65, contY, registro)
+                doc.text(95, contY, estudianteAp)
+                doc.text(125, contY, estudianteAm)
+                doc.text(155, contY, estudiante)
+                doc.text(195, contY, '.............')
+                doc.text(220, contY, '.............')
+                doc.addImage(imgQr, 'PNG', 245, imgY, 12, 12)
                 contY += 11;
                 imgY += 11;
 
             }else{
                 doc.setFontSize(8.5)
                 doc.text(15, contY, observacion)
-                doc.text(55, contY, estudianteAp)
-                doc.text(85, contY, estudianteAm)
-                doc.text(115, contY, estudiante)
-                doc.text(145, contY, '.............')
-                doc.addImage(imgQr, 'PNG', 165, imgY, 12, 12)
+                doc.text(65, contY, registro)
+                doc.text(95, contY, estudianteAp)
+                doc.text(125, contY, estudianteAm)
+                doc.text(155, contY, estudiante)
+                doc.text(195, contY, '.............')
+                doc.text(220, contY, '.............')
+                doc.addImage(imgQr, 'PNG', 245, imgY, 12, 12)
                 contY += 11;
                 imgY += 11;
             }
@@ -233,8 +243,8 @@ const generarPdf = () => {
         //     doc.addPage();
         // }
         doc.addPage();
-        contY = 60;
-        imgY = 50;
+        contY = 65;
+        imgY = 60;
 
     }
 

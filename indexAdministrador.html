@@ -133,7 +133,7 @@
               <div class="car-flex">
                 <img class="icon" src="./external/icons/Materiales.png" alt="" srcset="">
               </div>
-              <p class="card-text car-flex">MATERIAL</p>
+              <p class="card-text car-flex">POLERAS</p>
             </div>
             <span id="totalreg" class="badge badge-danger badge-down">0</span>
           </div>
@@ -171,7 +171,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalCenterTitle">REGISTRO</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="salir">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -197,7 +197,7 @@
 
               <div class="form-row">
                 <div class="col-12">
-                  <h4 class="car-flex">Registrado: No</h4>
+                  <h4 class="car-flex" id="txtRegistro">Registrado: No</h4>
                 </div>
               </div>
               <span aria-hidden="true">&times;</span>
@@ -238,7 +238,7 @@
                 <button type="button" id="credencial" class="btn btn-primary btn-full-width ">Credencial</button>
               </div>
               <div class="col-6 separacion">
-                <button type="button" class="btn btn-secondary btn-full" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary btn-full" data-dismiss="modal" id="cancel">Cancelar</button>
 
               </div>
               <div class="col-6 separacion">
@@ -252,7 +252,7 @@
       </div>
     </div>
 
-
+    digito.value = '';
     <div class="modal fade" id="crearCuenta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -380,8 +380,8 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">MATERIAL</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="exampleModalCenterTitle">POLERAS</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeM">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -396,6 +396,27 @@
                 </div>
                 <div class="col-12 separacion">
                   <button type="button" id="verificarM" class="btn btn-primary form-control">Verificar</button>
+                </div>
+                <span aria-hidden="true">&times;</span>
+                <div class="col-12 separacion">
+                  <select name="" id="conceptos" class="form-control">
+                    <option value="">Seleccione La Entraga</option>
+                    <option value="Polera">Polera</option>
+                    <option value="Cronograma y Lapicero">Cronograma y Lapicero</option>
+                    <option value="Todo">Todo</option>
+                  </select>
+                </div>
+                <span aria-hidden="true">&times;</span>
+                <div class="col-12 separacion">
+                  <select name="" id="talla" class="form-control">
+                    <option value="">Seleccione La Talla</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="P">P</option>
+                    <option value="X">X</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                  </select>
                 </div>
                 <span aria-hidden="true">&times;</span>
 
@@ -436,7 +457,7 @@
 
           </div>
           <div class="modal-footer ">
-            <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal" id="cancelM">Cancelar</button>
             <button type="button" id="regM" class="btn btn-primary btn-2">Registrar</button>
           </div>
         </div>

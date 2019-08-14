@@ -13,6 +13,9 @@ const registroTotal = document.querySelector('#totalreg');
 const scan = document.querySelector('#scan');
 const credencial = document.querySelector('#credencial');
 const textoReg = document.querySelector('#txtRegistro');
+const close = document.querySelector('#salir');
+const cancel = document.querySelector('#cancel');
+
 
 
 
@@ -50,6 +53,16 @@ credencial.addEventListener('click',()=>{
         alert('No hay datos');
     }
 });
+
+close.addEventListener('click',()=>{
+    io.limpiar();
+    digito.value = '';
+});
+
+cancel.addEventListener('click',() => {
+    io.limpiar();
+    digito.value = '';
+})
 
 
 
