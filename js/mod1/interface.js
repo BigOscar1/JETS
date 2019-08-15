@@ -251,6 +251,8 @@ class Interface {
             var filename = `Credencial${this.ramdonNombre()}.pdf`;
             savebase64AsPDF(folderpath, filename, realData, dataType);
             endLoader();
+            //alert(filename);
+            //alert(folderpath);
             Swal.fire(
                 'Exito',
                 'Guardado En Descargas',
