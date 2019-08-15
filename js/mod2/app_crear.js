@@ -15,7 +15,8 @@ const registroTotalCuenta = document.querySelector('#totalcre');
 
 
 document.getElementById('cancelar-Cuenta').addEventListener('click', () => {
-    $('#tipo').val('11')
+    $('#tipo').val('11');
+    $('#carrera').val('1110');
     $('#ci').val('');
     $('#name').val('');
     $('#paterno').val('');
@@ -40,6 +41,7 @@ crearUsu.addEventListener('click', () => {
     let phone = $('#phone').val();
     let email = $('#email').val();
     let descripcion = $('#descripcion').val();
+    let carrera = $('#carrera').val()    
 
     // crear.registrarPersona(id);
 
@@ -69,7 +71,8 @@ crearUsu.addEventListener('click', () => {
         fechnaci: fecnaNac,
         sexo: genero,
         estado: "N",
-        idrol: tipo
+        idrol: tipo,
+        idcarr: carrera 
     }
 
     const swalWithBootstrapButtons = Swal.mixin({
@@ -108,6 +111,7 @@ crearUsu.addEventListener('click', () => {
             $('#descripcion').val('');
             $('#M').prop( "checked", true );
             $('#F').prop( "checked", false );
+            $('#carrera').val('1110');
         } else if (
             // Read more about handling dismissals
             result.dismiss === Swal.DismissReason.cancel
