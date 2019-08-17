@@ -13,7 +13,7 @@ function cargarEventListeners() {
 //funciones
 function VerificarRol() {
     switch (user.idrol) {
-        case 10:
+        case 8:
                 // Swal.fire({
                 //     type: 'success',
                 //     title: 'Bienvenido Administrador =.D',
@@ -21,7 +21,7 @@ function VerificarRol() {
                 //     timer: 2500
                 //   })
             break;
-        case 8:
+        case 4:
                 cards.forEach((e, index) => {
                     if (index === 4 || index === 5 || index === 6) {
                         e.style.display = 'none'
@@ -31,7 +31,7 @@ function VerificarRol() {
                     }
                 })
             break;
-        case 7:
+        case 3:
                 location.href = './html/feria.html'
             break;
         default:
