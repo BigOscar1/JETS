@@ -6,6 +6,9 @@ const conexion = new Conexion();
 cargarEventListeners();
 
 function cargarEventListeners() {
+
+    document.addEventListener('DOMContentLoaded', cargarStorage);
+
     loginBtn.addEventListener('click', enviarDatos);
 }
 
@@ -52,40 +55,8 @@ function enviarDatos(e) {
     })
 }
 
-// function enviarDatos1(e) {
-//     // e.preventDefault();
-//     let url = conexion.getUrl()
-//     url += 'persona-login';
 
-//     // let data = {
-//     //     usuario: nombre,
-//     //     password: password, 
-//     //     // token: true
-//     // }
-
-//     fetch("http://localhost:9000/api/persona-login", {
-//         method: 'post',
-//         headers: {
-//             "Content-type": "application/x-www-form-urlencoded",
-//             // "Content-type": "application/json"
-//             // application/x-www-form-urlencoded
-//         },
-//         body: 'usuario=' + usuario + '&password=' + password + '&token=' + true
-//     })
-//     .then(function (response) {
-//         console.log('My JWT:', response.headers.get('token'));
-//         console.log(response);
-        
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         // Do something with JSON data.
-//         console.log(data);
-        
-//     })
-//     .catch(function (error) {
-//         console.log('Request failed', error);
-//     });
-// }
-
-
+function cargarStorage() {
+    let user = JSON.parse(localStorage.getItem('user'));
+    (user) ? location.href = './indexAdministrador.html' :console.log('Sin Usuario'); 
+}

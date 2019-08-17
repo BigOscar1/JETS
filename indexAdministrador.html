@@ -274,19 +274,19 @@
                   <label for="name" class="col-form-label">Nombre:</label>
                 </div>
                 <div class="col-9 separacion">
-                  <input type="text" class="form-control" id="name" autocomplete="off" placeholder="Nombre">
+                  <input type="text" class="form-control" id="name" autocomplete="off" placeholder="Nombre" >
                 </div>
                 <div class="col-3 separacion">
                   <label for="name" class="col-form-label">Paterno:</label>
                 </div>
                 <div class="col-9 separacion">
-                  <input type="etextmail" class="form-control" id="paterno" autocomplete="off" placeholder="Apellido Paterno">
+                  <input type="etextmail" class="form-control" id="paterno" autocomplete="off" placeholder="Apellido Paterno" >
                 </div>
                 <div class="col-3 separacion">
                   <label for="name" class="col-form-label">Materno:</label>
                 </div>
                 <div class="col-9 separacion">
-                  <input type="text" class="form-control" id="materno" autocomplete="off" placeholder="Apellido Materno">
+                  <input type="text" class="form-control" id="materno" autocomplete="off" placeholder="Apellido Materno" >
                 </div>
                 <div class="col-3 separacion">
                   <label for="name" class="col-form-label">Genero:</label>
@@ -334,6 +334,7 @@
                     aria-controls="collapseExample">
                     <option value="11" selected="" disabled>Tipo de Usuario</option>
                     <option value="1">Estudiante</option>
+<<<<<<< HEAD
                     <option value="4">Invitado</option>
                     <option value="5">Externo</option>
                     <option value="6">Conferencista</option>
@@ -342,6 +343,16 @@
                     <option value="9">Jefe de Carrera</option>
                     <option value="8">Staff</option>
                     <option value="10">Administrador</option>
+=======
+                    <option value="2">No Estudiante</option>
+                    <option value="6">Invitado</option>
+                    <option value="7">Conferenciasta</option>
+                    <option value="3">Jurado</option>
+                    <option value="5">Jefe de Carrera</option>
+                    <option value="4">Staff</option>
+                    <option value="9">Team Power</option>
+                    <!-- <option value="8">Administrador</option> -->
+>>>>>>> 483dc0bde21fc6228056298d3ac86bd436c2ce0e
                   </select>
                 </div>
               </div>
@@ -350,8 +361,42 @@
                   <label for="name" class="col-form-label">Registro:</label>
                 </div>
                 <div class="col-9 separacion">
-                  <input type="text" class="form-control" id="registroEstudiante" autocomplete="off" placeholder="Registro">
+                  <input type="text" class="form-control" id="registroregistroEstudiante" autocomplete="off" placeholder="Registro">
                 </div>
+                <div class="col-3 separacion">
+                  <label for="name" class="col-form-label">Carrera:</label>
+                </div>
+                <div class="col-9 separacion">
+                  <select class="custom-select" id="tipo" data-target="#participante" aria-expanded="false"
+                  aria-controls="collapseExample">
+                  <option value="1110" selected="" disabled>Carrera</option>
+                  <option value="4">ING. EN MARKETING Y PUBLICIDAD</option>
+                  <option value="6">ING. MECANICA AUTOMOTRIZ Y AGROINDUSTRIAL</option>
+                  <option value="8">ING. ELECTRONICA Y SISTEMA</option>
+                  <option value="10">AUDITORIA FINANCIRA</option>
+                  <option value="12">ADMINISTRACION GENERAL</option>
+                  <option value="14">ING. INDUSTRIAL Y COMERCIAL</option>
+                  <option value="16">DERECHO</option>
+                  <option value="20">ADMINISTRACION DE TURISMO</option>               
+                  <option value="22">COMERCIO INTERNACIONAL</option>               
+                  <option value="26">ADMINISTRACION FINANCIERA</option>               
+                  <option value="28">ING. COMERCIAL</option>               
+                  <option value="30">ING. EN REDES Y TELECOMUNICACIONES</option>               
+                  <option value="32">ING. EN ADMINISTRACION PETROLERA</option>               
+                  <option value="34">ING. INFORMATICA Y SISTEMAS ADMINISTRATIVOS</option>               
+                  <option value="44">RELACIONES INTERNACIONALES</option>               
+                  <option value="46">ING. SISTEMAS</option>               
+                  <option value="50">CONTADURIA PUBLICA</option>               
+                  <option value="53">ING. FINANCIERA</option>               
+                  <option value="54">ING ELECTRONICA</option>               
+                  <option value="55">COMUNICACION ESTRATEGICA Y DIGITAL</option>               
+                  <option value="56">PSICOLOGIA</option>               
+                  <option value="512">ADMINISTRACION GENERAL</option>               
+                  <option value="528">ING. COMERCIAL</option>               
+                  <option value="550">CONTADURIA PUBLICA</option>               
+                  <option value="553">ING. FINANCIERA</option>               
+                  <option value="555">COMUNICACION ESTRATEGICA Y DIGITAL</option>               
+                 </div>
               </div>
               <div class="collapse form-row " id="noParticipante">
                 <div class="col-3 separacion">
@@ -399,7 +444,11 @@
                 <span aria-hidden="true">&times;</span>
                 <div class="col-12 separacion">
                   <select name="" id="conceptos" class="form-control">
+<<<<<<< HEAD
                     <option value="">Seleccione La Entrega</option>
+=======
+                    <option  value="" selected="" disabled>Seleccione La Entrega</option>
+>>>>>>> 483dc0bde21fc6228056298d3ac86bd436c2ce0e
                     <option value="Polera">Polera</option>
                     <option value="Cronograma y Lapicero">Cronograma y Lapicero</option>
                     <option value="Todo">Todo</option>
@@ -408,7 +457,7 @@
                 <span aria-hidden="true">&times;</span>
                 <div class="col-12 separacion">
                   <select name="" id="talla" class="form-control">
-                    <option value="">Seleccione La Talla</option>
+                    <option value="" selected="" disabled >Seleccione La Talla</option>
                     <option value="L">L</option>
                     <option value="M">M</option>
                     <option value="P">P</option>
@@ -458,7 +507,7 @@
           </div>
           <div class="modal-footer ">
             <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal" id="cancelM">Cancelar</button>
-            <button type="button" id="regM" class="btn btn-primary btn-2">Registrar</button>
+            <button type="button" id="regM" class="btn btn-primary btn-2">Entregar</button>
           </div>
         </div>
       </div>
