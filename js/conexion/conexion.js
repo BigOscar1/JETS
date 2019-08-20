@@ -62,7 +62,7 @@ class Conexion{
 
 
     getUrl() {
-        return `http://localhost:9001/api/`;
+        return `http://190.186.43.205:8080/api/`;
     }
     // http://172.27.9.14:9001/api/
     // 190.186.43.205:8080
