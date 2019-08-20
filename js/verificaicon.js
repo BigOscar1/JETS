@@ -36,6 +36,9 @@ function enviarDatos(e) {
             return JSON.parse(window.atob(base64));
         };
         localStorage.setItem('user', JSON.stringify(datosToken))
+        localStorage.setItem('registro',datosToken.registro);
+        localStorage.setItem('rol',datosToken.idrol);
+
     })
     .then(() => {
         const user = JSON.parse(localStorage.getItem('user'));

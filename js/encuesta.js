@@ -1,13 +1,22 @@
 //variable global
+const cnxEn = new Conexion();
+
+
+
 let calificacion = [];
 let pregunta1Form = document.querySelector('.pregunta1Form');
 let pregunta2Form = document.querySelector('.pregunta2Form');
 let pregunta3Form = document.querySelector('.pregunta3Form');
 let pregunta4Form = document.querySelector('.pregunta4Form');
+
+
 //let pregunta5Form = document.querySelector('.pregunta5Form');
 //let pregunta6Form = document.querySelector('.pregunta6Form');
 //let pregunta7Form = document.querySelector('.pregunta7Form');
 let siguiente = 0;
+
+let rubrica = 1;
+
 
 let pregunta1 = Array.from(document.querySelectorAll('.clasificacion')[0].querySelectorAll('input'));
 pregunta1.forEach(function(x) {
@@ -104,18 +113,41 @@ botones.forEach( (x) => {
                   //  pregunta2Form.classList.remove('no-mostrar');
                    // pregunta3Form.classList.add('no-mostrar');
                // }
-                siguiente --               
+                // siguiente --               
             }
             break;
             case 'finalizar' : {
-                calificacion[6] === undefined ? calificacion[6] = {calificacion: 0} : console.log('todo Bien')
-                calificacion.forEach(function(x){
-                    console.log(x);
+                calificacion[4] === undefined ? calificacion[4] = {calificacion: 0} : console.log('todo Bien')
+                calificacion.forEach((x,i) => {
+                    // debugger
+                     if(i !== 4){
+                        console.log(x); 
+                        let json = {
+                             nota:x.calificacion,
+                             idreg: Number(localStorage.getItem('habilitado')),
+                             idrub:rubrica
+                        };
+                        console.log(json);
+                        let url = cnxEn.getUrl();
+                        url+= 'encuesta';
+                        cnxEn.post(json,url)
+                        .then(res => {
+                            console.log(res);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        });
+                        
+                    }
+                    rubrica++;
                 })
+                rubrica = 0;
+                alert('Gracias....')
                 pregunta1Form.classList.add('no-mostrar');
                 pregunta2Form.classList.add('no-mostrar');
                 pregunta3Form.classList.add('no-mostrar');
                 pregunta4Form.classList.add('no-mostrar');
+                location.href = './speaker.html'
                 //pregunta5Form.classList.add('no-mostrar');
                 //pregunta6Form.classList.add('no-mostrar');
                 //pregunta7Form.classList.add('no-mostrar');
@@ -125,3 +157,31 @@ botones.forEach( (x) => {
         }
     })
 })
+
+const datos = ()=>{
+   const reg = Number(localStorage.getItem('registro'));
+   let url = cnxEn.getUrl();
+   url+= `registro-con/${reg}`;
+    cnxEn.get(url)
+    .then(res => {
+        console.log(res);
+        const datos = res.registro;
+        if(datos.length > 0) {
+            for (let i = 0; i < datos.length; i++) {
+                const {id ,conferencia:{estado}} = datos[i];
+                    if(estado === 'H'){
+                        localStorage.setItem('habilitado',id);
+                    }
+            }
+        }
+        else{
+            alert('Registrese en la conferencia');
+            location.href = './speaker.html';
+        }
+
+    })
+    .catch(err => {
+        console.log(err);
+    })
+};
+datos();

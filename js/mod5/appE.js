@@ -3,7 +3,9 @@ const cnxE = new Conexion();
 const ioE = new InterfacE();
  
 //variables globales
-
+let idcon = 0;
+let confirmar = 0;
+const horario = document.querySelector('#horario');
 const digito = document.querySelector('#digitos');
 const verificar = document.querySelector('#verificar');
 const registrar = document.querySelector('#reg');
@@ -13,6 +15,21 @@ const scan = document.querySelector('#scan');
 const textoReg = document.querySelector('#txtRegistro');
 const close = document.querySelector('#salir');
 const cancel = document.querySelector('#cancel');
+
+// const inscribir1 = document.querySelector('#1');
+// const inscribir2 = document.querySelector('#2');
+const inscribir3 = document.querySelector('#ins3');
+// const inscribir4 = document.querySelector('#4');
+const inscribir5 = document.querySelector('#ins5');
+
+
+const encuesta1 = document.querySelector('#encuesta1');
+const encuesta2 = document.querySelector('#encuesta2');
+const encuesta3 = document.querySelector('#encuesta3');
+const encuesta4 = document.querySelector('#encuesta4');
+const encuesta5 = document.querySelector('#encuesta5');
+
+const rol = Number(localStorage.getItem('rol'));
 
 // funciones
 
@@ -38,7 +55,7 @@ registrar.addEventListener('click', () => {
         if(tur !== ''){
             let json = {
                 reg:r,
-                idcon:2,
+                idcon:idcon,
                 turno:tur
             };
          let url = cnxE.getUrl();
@@ -57,20 +74,117 @@ registrar.addEventListener('click', () => {
         }
    
     }
-    
-    // const reg = ioE.getRegistro();
-    // if(reg !== undefined || reg !== null){
-
-    // }else{
-    //     alert('no hay datos');
-    // }
-    // const estado = io.getEstado();
-    // if (estado === 'N') {
-    //     const id = io.getId();
-    //     io.registrarPersona(id);
-    // } else if (estado === 'R') {
-    //     alert('Ya se Encuentra Registrado');
-    // } else {
-    //     alert('No hay datos');
-    // }
 });
+
+close.addEventListener('click',()=>{
+    ioE.limpiar();
+    digito.value = '';
+    horario.value = '';
+});
+
+cancel.addEventListener('click',() => {
+    ioE.limpiar();
+    digito.value = '';
+    horario.value = '';
+});
+
+
+inscribir3.addEventListener('click',()=>{
+    console.log('3'); 
+    idcon = 3;
+   
+   
+});
+
+
+inscribir5.addEventListener('click',()=>{
+    console.log('5'); 
+    idcon = 5;
+   
+});
+
+encuesta1.addEventListener('click',()=>{
+    if(rol !==1){
+        location.href = "./encuestas.html";
+    }else{
+        alert('NO HABILITADA')
+    }
+    
+});
+
+encuesta2.addEventListener('click',()=>{
+    datos();
+    if(rol !==1){
+        location.href = "./encuestas.html";
+        localStorage.setItem('con',3);
+    }else{
+        if(confirmar === 3){
+            location.href = "./encuestas.html";
+            localStorage.setItem('con',3);
+        }else{
+            alert('NO HABILITADA')
+        }
+    }
+});
+
+encuesta3.addEventListener('click',()=>{
+    datos();
+    if(rol !==1){
+        location.href = "./encuestas.html";
+        localStorage.setItem('con',5);
+    }else{
+        if(confirmar === 5){
+            location.href = "./encuestas.html";
+        localStorage.setItem('con',5);
+        }else{
+            alert('NO HABILITADA')
+        }
+    }
+});
+
+encuesta4.addEventListener('click',()=>{
+    if(rol !==1){
+        location.href = "./encuestas.html";
+    }else{
+        alert('NO HABILITADA')
+    }
+});
+
+encuesta5.addEventListener('click',()=>{
+    if(rol !==1){
+        location.href = "./encuestas.html";
+    }else{
+        alert('NO HABILITADA')
+    }
+});
+
+
+const datos = ()=>{
+    // debugger
+    const reg = Number(localStorage.getItem('registro'));
+    let url = cnxE.getUrl();
+    url+= `registro-con/${reg}`;
+    cnxE.get(url)
+     .then(res => {
+         console.log(res);
+         const datos = res.registro;
+         if(datos.length > 0) {
+             for (let i = 0; i < datos.length; i++) {
+                 const {id ,conferencia:{estado}, conferencia:{ id: confe }} = datos[i];
+                     if(estado === 'H'){
+                         localStorage.setItem('habilitado',id);
+                         confirmar = confe;
+                         console.log(confirmar);
+                         
+                     }
+             }
+         }else{
+             alert('Registrese con el staff')
+         }
+     })
+     .catch(err => {
+         console.log(err);
+     })
+ };
+
+ datos();

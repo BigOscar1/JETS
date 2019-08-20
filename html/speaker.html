@@ -83,7 +83,7 @@
                         
                                       </div>
                                       <div class="col-6 separacion">
-                                        <button type="button" id="encuesta" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
+                                        <button type="button" id="encuesta1" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
                         
                                       </div>
                                     </div>            
@@ -115,13 +115,13 @@
                         <div class="card card-body card-speaker">
                                 <div class="form-row ">
                                         <div class="col-6 separacion">
-                                          <button type="button" id="inscribir" class="btn btn-secondary btn-full inscribir" data-toggle="modal"
-                                          data-target="#inscripcion" aria-expanded="false" aria-controls="collapseExample">INSCRIBIR</button>
+                                          <button type="button" id="ins3" class="btn btn-secondary btn-full inscribir" data-toggle="modal"
+                                          data-target="#inscripcion" aria-expanded="false" data-id="3" aria-controls="collapseExample">INSCRIBIR</button>
                           
                                         </div>
                                         <div class="col-6 separacion">
-                                          <button type="button" id="encuesta" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
-                          
+                                          <button type="button" id="encuesta2" class="btn btn-primary btn-full encuesta" data-id="3">ENCUESTA</button>
+                      
                                         </div>
                                       </div>
                         </div>
@@ -156,12 +156,12 @@
                     <div class="card card-body card-speaker">
                             <div class="form-row ">
                                     <div class="col-6 separacion">
-                                      <button type="button" id="inscribir" class="btn btn-secondary btn-full inscribir" data-toggle="modal"
+                                      <button type="button" id="ins5" class="btn btn-secondary btn-full inscribir" data-toggle="modal"
                                       data-target="#inscripcion" aria-expanded="false" aria-controls="collapseExample">INSCRIBIR</button>
                       
                                     </div>
                                     <div class="col-6 separacion">
-                                      <button type="button" id="encuesta" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
+                                      <button type="button" id="encuesta3" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
                       
                                     </div>
                                   </div>
@@ -197,7 +197,7 @@
                   
                                 </div>
                                 <div class="col-6 separacion">
-                                  <button type="button" id="encuesta" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
+                                  <button type="button" id="encuesta4" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
                   
                                 </div>
                               </div>
@@ -233,7 +233,7 @@
               
                             </div>
                             <div class="col-6 separacion">
-                              <button type="button" id="encuesta" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
+                              <button type="button" id="encuesta5" class="btn btn-primary btn-full encuesta">ENCUESTA</button>
               
                             </div>
                           </div>
@@ -246,7 +246,7 @@ aria-hidden="true">
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalCenterTitle">Inscripción</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <button type="button" class="close" id="salir" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -352,7 +352,7 @@ aria-hidden="true">
 
     </div>
     <div class="modal-footer ">
-      <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal">Cancelar</button>
+      <button type="button" class="btn btn-secondary btn-2" data-dismiss="modal" id="cancel">Cancelar</button>
       <button type="button" id="reg" class="btn btn-primary btn-2">Registrar</button>
     </div>
   </div>
@@ -695,11 +695,11 @@ aria-hidden="true">
     <!-- Principal -->
     <script type="text/javascript" src="../cordova.js"></script>
     <script src="../js/principal.js"></script>
-    <script>
+    <!-- <script>
     document.querySelector('#encuesta').addEventListener('click', () => {
       location.href = "./encuestas.html"
     })
-    </script>
+    </script> -->
     <script src="../js/verificacionSpeaker.js"></script>
     <script src="../js/conexion/conexion.js"></script>
     <script src="../js/mod5/InterfaceE.js"></script>
