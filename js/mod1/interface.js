@@ -220,11 +220,11 @@ class Interface {
         let logo = new Image();
         let width = doc.internal.pageSize.getWidth();
         let height = doc.internal.pageSize.getHeight();
-        logo.src = './img/credencial.png';
+        logo.src = './img/credencialjets.png';
         doc.addImage(logo, 'PNG', ((width - 90) / 2), 50, 90, 130);
         console.log((width / 90) / 2);
         doc.setFontSize(10);
-        this.centrar(doc, tipo, 100);
+        this.centrar(doc, tipo, 103);
         this.centrar(doc, nom, 145);
         doc.addImage(imgQr, 'PNG', 87.5, 105, 35, 35);
         console.log('aqui');
@@ -311,6 +311,65 @@ class Interface {
         for (let i = 0; i < campos.length; i++) {
             campos[i].value = 'No Existe';
         }
+    }
+
+    credencialesGeneral(id){
+        let cont = 1;
+        let url =  cnx.getUrl();
+        url += `persona-rol/${id}`;
+        cnx.get(url)
+        .then(res => {
+            console.log(res);
+            const datos = res.persona;
+            if(datos.length > 0){
+                let doc = new jsPDF('');
+                let logo = new Image();
+                logo.src = './img/credencialjets.png';
+                console.log(datos);
+                for (let i = 0; i < datos.length; i++) {
+
+                    const {nombres,apaterno ,credenciale : {codigoQr}, role: {rol}}  = datos[i];
+                    console.log(nombres,apaterno,codigoQr,rol);
+                    const nom = `${nombres} ${apaterno}`;
+                    const oculto = `${codigoQr} - ${nombres} ${apaterno}`;
+                    const qr = oculto.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
+                    const imgQr = create_qrcode(qr);
+                    let width = doc.internal.pageSize.getWidth();
+                    let height = doc.internal.pageSize.getHeight();
+                    if(i === cont){
+                        doc.addImage(logo, 'PNG', ((width - 90) / 2), 145, 90, 130);
+                        console.log((width / 90) / 2);
+                        doc.setFontSize(10);
+                        this.centrar(doc, rol, 197);
+                        this.centrar(doc, nom, 240);
+                        doc.addImage(imgQr, 'PNG', 87.5, 200, 35, 35);
+                        doc.addPage();
+                        cont += 2 
+                    }else{
+
+                    doc.addImage(logo, 'PNG', ((width - 90) / 2), 10, 90, 130);
+                    console.log((width / 90) / 2);
+                    doc.setFontSize(10);
+                    this.centrar(doc, rol, 62);
+                    this.centrar(doc, nom, 105);
+                    doc.addImage(imgQr, 'PNG', 87.5, 65, 35, 35);
+
+                    }
+                  
+                   
+                    
+                    
+                }
+                window.open(doc.output('bloburl'));
+                
+            }else{
+                console.log('no hay datos');
+            }
+        })
+        .catch(err =>{
+            console.log(err);
+            
+        })
     }
 }
 

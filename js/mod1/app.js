@@ -69,3 +69,4 @@ cancel.addEventListener('click',() => {
 function textQr(texto) {
     io.datosQr(texto);
 }
+
