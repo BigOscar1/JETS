@@ -37,7 +37,7 @@ $("#tipo").click(function () {
   if (tipo == "1") {
     $('#noParticipante').collapse('hide');
     $('#participante').collapse('show');
-
+    
   }
   else {
     if(tipo == null){
