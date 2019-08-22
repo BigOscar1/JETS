@@ -322,7 +322,7 @@ class Interface {
             console.log(res);
             const datos = res.persona;
             if(datos.length > 0){
-                let doc = new jsPDF('');
+                let doc = new jsPDF();
                 let logo = new Image();
                 logo.src = './img/credencialjets.png';
                 console.log(datos);
@@ -354,11 +354,7 @@ class Interface {
                     this.centrar(doc, nom, 105);
                     doc.addImage(imgQr, 'PNG', 87.5, 65, 35, 35);
 
-                    }
-                  
-                   
-                    
-                    
+                    }  
                 }
                 window.open(doc.output('bloburl'));
                 
@@ -371,7 +367,79 @@ class Interface {
             
         })
     }
+
+
+    grupoJets(){
+        let aux = 3;
+        let url = cnx.getUrl();
+        url += 'proyecto-all';
+        let x = 25;
+        let y = 40;
+        let z = 37;
+        cnx.get(url)
+        .then(res => {
+            console.log(res);
+            const datos = res.proyecto;
+            if(datos.length > 0){
+                let doc = new jsPDF();
+                let width = doc.internal.pageSize.getWidth();
+                doc.setFontSize(30)
+                for (let i = 0; i < datos.length; i++) {
+                        const {proyecqr:{ codigo } , proyecto} = datos[i];
+                        const nombre = proyecto;
+                        const qr = codigo;
+                        const cod = qr.replace(/^[\s\u3000]+|[\s\u3000]+$/g, '');
+                        const imgQr = create_qrcode(cod);
+                        // debugger
+                        if(i === aux){
+                            doc.addPage();
+                            x = 25;
+                            y = 40;
+                            z = 37;
+                            this.centrar(doc, nombre, x);
+                            this.centrar(doc, codigo, z);
+                            doc.addImage(imgQr, 'PNG', 80, y, 50, 50);
+                            x += 85;
+                            z +=85; 
+                            y += 90;
+                            aux += 3; 
+                        }else{
+                            this.centrar(doc, nombre, x);
+                            this.centrar(doc, codigo, z);
+                            doc.addImage(imgQr, 'PNG', 80, y, 50, 50);
+                            x += 85;
+                            z +=85; 
+                            y += 90;
+                        }
+
+                }
+                window.open(doc.output('bloburl'));
+
+                    console.log(datos);
+                    
+            }else{
+                console.log('No hay datos');
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
 }
+
+
+// createdAt: null
+// descripcion: "ARBOL ARTIFICIAL"
+// id: 1
+// proyecqr:
+// codigo: "81171"
+// createdAt: null
+// id: 1
+// idpro: 1
+// updatedAt: null
+// __proto__: Object
+// proyecto: "ARBOL ARTIFICIAL"
+
 
 // amaterno: "SARMIENTO                     "
 // apaterno: "                              "

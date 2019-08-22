@@ -147,7 +147,9 @@ botones.forEach( (x) => {
                 pregunta2Form.classList.add('no-mostrar');
                 pregunta3Form.classList.add('no-mostrar');
                 pregunta4Form.classList.add('no-mostrar');
-                location.href = './speaker.html'
+                setTimeout(() => {
+                    location.href = './speaker.html';    
+                }, 2500);
                 //pregunta5Form.classList.add('no-mostrar');
                 //pregunta6Form.classList.add('no-mostrar');
                 //pregunta7Form.classList.add('no-mostrar');

@@ -22,6 +22,9 @@ const inscribir3 = document.querySelector('#ins3');
 // const inscribir4 = document.querySelector('#4');
 const inscribir5 = document.querySelector('#ins5');
 
+const inscribir7 = document.querySelector('#ins7');
+const inscribir8 = document.querySelector('#ins8');
+
 
 const encuesta1 = document.querySelector('#encuesta1');
 const encuesta2 = document.querySelector('#encuesta2');
@@ -40,6 +43,11 @@ verificar.addEventListener('click',() => {
     const valor = digito.value;
     ioE.datosPersona(valor);
     
+});
+
+
+scan.addEventListener('click', () => {
+    ioE.scan();
 });
 
 
@@ -103,11 +111,30 @@ inscribir5.addEventListener('click',()=>{
    
 });
 
+inscribir7.addEventListener('click',()=>{
+    console.log('7'); 
+    idcon = 7;
+   
+});
+
+inscribir8.addEventListener('click',()=>{
+    console.log('8'); 
+    idcon = 8;
+   
+});
+
 encuesta1.addEventListener('click',()=>{
+    datos();
     if(rol !==1){
         location.href = "./encuestas.html";
+        localStorage.setItem('con',7);
     }else{
-        alert('NO HABILITADA')
+        if(confirmar === 7){
+            location.href = "./encuestas.html";
+            localStorage.setItem('con',7);
+        }else{
+            alert('NO HABILITADA')
+        }
     }
     
 });
@@ -143,10 +170,17 @@ encuesta3.addEventListener('click',()=>{
 });
 
 encuesta4.addEventListener('click',()=>{
+    datos();
     if(rol !==1){
         location.href = "./encuestas.html";
+        localStorage.setItem('con',8);
     }else{
-        alert('NO HABILITADA')
+        if(confirmar === 8){
+            location.href = "./encuestas.html";
+        localStorage.setItem('con',8);
+        }else{
+            alert('NO HABILITADA')
+        }
     }
 });
 
@@ -188,3 +222,12 @@ const datos = ()=>{
  };
 
  datos();
+
+ function textQr(texto) {
+    //  alert(texto);
+    const datos = texto.split('-');
+    const text = datos[0];
+    document.getElementById('digitos').value = text;
+    ioE.datosQr(text);
+}
+

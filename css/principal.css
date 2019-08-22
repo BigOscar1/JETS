@@ -56,6 +56,10 @@ border-radius: 0 0px 5px 5px;
     background-position: center;
 }
 
+.card-verde {
+    background-color: rgba(8, 187, 8 , .8) !important;
+}
+
 .card-button:active {
     box-shadow: none;
     text-shadow: 1px 1px 6px #fff;

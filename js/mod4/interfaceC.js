@@ -17,14 +17,21 @@ class InterfaceC {
             console.log(res);
             const datos = res.proyecto;
             if(datos.length >  0){
-                 const {proyecto,id,calificaciones} = datos[0];
+                 const {proyecto,id,calificaciones, proyecqr : { codigo }  } = datos[0];
                  console.log('cal',calificaciones.length);
                  grupo = `<center><h4>GRUPO: ${proyecto}</h4></center>`;
                  this.idpro = id;
-                 console.log(proyecto,id);                 
+                 console.log(proyecto,id);
+                 localStorage.setItem('codigoQr',codigo);
+                 contenidoRubrica.style.display = 'block';
+                 btnGuardar.style.display = 'block';             
+
             }else{
                 grupo = `<h4>NO HAY DATOS</h4>`;
                 this.idpro = null;
+                contenidoRubrica.style.display = 'none';
+                btnGuardar.style.display = 'none';
+                localStorage.removeItem('codigoQr');   
                 console.log('No Hay Datos');
             }
             nameGrup.innerHTML = grupo;
