@@ -9,6 +9,7 @@ class InterfaceC {
     }
 
     getProyect(qr){
+        let bool = false;
         let grupo = '';
         let url = cnxC.getUrl();
         url += `proyectoqr/${qr}`;
@@ -19,12 +20,39 @@ class InterfaceC {
             if(datos.length >  0){
                  const {proyecto,id,calificaciones, proyecqr : { codigo }  } = datos[0];
                  console.log('cal',calificaciones.length);
-                 grupo = `<center><h4>GRUPO: ${proyecto}</h4></center>`;
-                 this.idpro = id;
-                 console.log(proyecto,id);
-                 localStorage.setItem('codigoQr',codigo);
-                 contenidoRubrica.style.display = 'block';
-                 btnGuardar.style.display = 'block';             
+                 if(calificaciones.length > 0){
+                    //  debugger
+                     const registro = localStorage.getItem('registro');
+                     for (let i = 0; i < calificaciones.length; i++) {
+                            const x = calificaciones[i].reg;
+                            console.log(x);
+                            if(x === registro){
+                                grupo = `<center><h4>GRUPO: YA CALIFICADO</h4></center>`; 
+                                this.idpro = null;
+                                contenidoRubrica.style.display = 'none';
+                                btnGuardar.style.display = 'none';
+                                localStorage.removeItem('codigoQr');
+                                bool = true;
+                                break;
+                            }
+                     }
+                     if(!bool){
+                        grupo = `<center><h4>GRUPO: ${proyecto}</h4></center>`;
+                        this.idpro = id;
+                        console.log(proyecto,id);
+                        localStorage.setItem('codigoQr',codigo);
+                        contenidoRubrica.style.display = 'block';
+                        btnGuardar.style.display = 'block';          
+                     }
+                 }else{
+                    grupo = `<center><h4>GRUPO: ${proyecto}</h4></center>`;
+                    this.idpro = id;
+                    console.log(proyecto,id);
+                    localStorage.setItem('codigoQr',codigo);
+                    contenidoRubrica.style.display = 'block';
+                    btnGuardar.style.display = 'block';          
+                 }
+                    
 
             }else{
                 grupo = `<h4>NO HAY DATOS</h4>`;
