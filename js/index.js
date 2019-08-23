@@ -31,6 +31,10 @@ $("#presentacion").click(function () {
   location.href = "../html/feria3.html";
 });
 
+$("#ganadores").click(function () {
+  location.href = "../html/ganadores.html";
+});
+
 $("#tipo").click(function () {
   const usuario = $("#tipoUsuario");
   let tipo = $("#tipo").val()
